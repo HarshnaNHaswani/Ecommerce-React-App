@@ -1,0 +1,50 @@
+/* to be deleted later */
+.nav-header {
+  margin-bottom: 2rem;
+}
+.nav{
+  flex-flow: column wrap;
+  margin-bottom: 0;
+}
+.nav .list-inline{
+  margin: unset;
+  flex-flow: row wrap;
+  justify-content: center;
+
+}
+.nav {
+  width:  100%;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.5ch;
+}
+
+.logo {
+ width: clamp(4rem, 8rem, 12rem);
+ border-radius: 5px;;
+}
+
+.active {
+  text-decoration: underline;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+.notActive{
+  color: var(--color-primary-inverse)
+}
+
+@media screen and (min-width: 50em) {
+  .nav-site{
+    flex-flow: row wrap;
+  }
+  .nav-header.center-xy {
+    flex-flow: row nowrap;
+    justify-content: space-around;
+  }
+  .nav-header > *{
+    align-self: center;
+    justify-self: center;
+    flex: 1 0 15%
+   }
+}
