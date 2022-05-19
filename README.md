@@ -1,4 +1,4 @@
-## E-commerce 
+## E-commerce
 
 - Made with React
 
@@ -11,7 +11,13 @@
   - Wishlist - Add/ Remove from Wishlist, Move to Cart
   - cart -Add/ Remove from Cart, Move to Wishlist, Increase/Decrease Quantity
 
-  - Products Listing with sort (price) and filter(inStock, categories, price range, rating)
+  - Products Listing with
+    - sort
+      - price
+    - filter(
+      - inStock
+      - categories
+      - sub categories
+      - price range
+      - rating)
   - Home
-
-
