@@ -6,7 +6,7 @@
 
 - Features:
 
-  - Authentication - Login, Signup, Logout, ForgotPassword
+  - Authentication - Login(remember me), Signup(input validation), Logout, ForgotPassword
 
   - Wishlist - Add/ Remove from Wishlist, Move to Cart
   - cart -Add/ Remove from Cart, Move to Wishlist, Increase/Decrease Quantity
@@ -16,6 +16,7 @@
       - price
     - filter(
       - inStock
+      - featured
       - categories
       - sub categories
       - price range
