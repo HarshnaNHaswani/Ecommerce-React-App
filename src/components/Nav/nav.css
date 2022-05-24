@@ -2,49 +2,83 @@
 .nav-header {
   margin-bottom: 2rem;
 }
-.nav{
+.nav {
   flex-flow: column wrap;
   margin-bottom: 0;
 }
-.nav .list-inline{
+.nav .list-inline {
   margin: unset;
   flex-flow: row wrap;
   justify-content: center;
-
 }
 .nav {
-  width:  100%;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 100;
   letter-spacing: 0.5ch;
 }
 
-.logo {
- width: clamp(4rem, 8rem, 12rem);
- border-radius: 5px;;
+.nav-header .logo {
+  width: clamp(8rem, 16rem, 24rem);
+  border-radius: 5px;
 }
 
-.active {
+.nav-header .active {
   text-decoration: underline;
   font-size: 1.2em;
   font-weight: 400;
 }
-
-.notActive{
-  color: var(--color-primary-inverse)
+.nav-header .notActive {
+  color: var(--color-primary-inverse);
+}
+.nav-header .btn-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0.5ch;
+  padding: 0.5ch;
+  font-size: 0.8em;
+}
+.nav-header .btn-icon .icon {
+  min-width: 3rem;
+  max-width: 3rem;
 }
 
-@media screen and (min-width: 50em) {
-  .nav-site{
+.nav-header .logo {
+  margin: 1ch;
+}
+.nav-header * {
+  flex: 0  1 15%;
+  place-self: center;
+}
+
+.nav-header section {
+  flex-flow: row wrap;
+}
+
+.nav-header .private-menu {
+  width: min-content;
+}
+.nav-header .btn {
+  width: 200px;
+  min-height: 4rem;
+  padding: 1ch;
+  margin: 1ch;
+}
+.nav-header .btn-toggle {
+  width: 12px;
+  flex: 0 2 2%
+}
+
+@media screen and (min-width: 60em) {
+  .nav-site {
     flex-flow: row wrap;
   }
   .nav-header.center-xy {
     flex-flow: row nowrap;
     justify-content: space-around;
   }
-  .nav-header > *{
+  .nav-header > * {
     align-self: center;
     justify-self: center;
-    flex: 1 0 15%
-   }
+  }
 }
