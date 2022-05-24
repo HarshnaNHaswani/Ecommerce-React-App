@@ -1,0 +1,28 @@
+.wishlist .card-container {
+  position: relative;
+}
+
+.wishlist {
+  margin: 2ch;
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 80vw;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2ch;
+  /* --width-min-grid-fit: 25vw;
+  --width-max-grid-fit: 400px; */
+}
+
+/* .wishlist .grid-container {
+  width: 100vw;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.grid-child{
+  margin: 1ch 0 0;
+  min-width: max-content;
+  max-width: 80vw;
+  justify-self: center;
+} */
