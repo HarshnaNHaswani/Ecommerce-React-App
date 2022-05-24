@@ -1,0 +1,74 @@
+.disableElement {
+  pointer-events: none;
+  margin-right: -2ch;
+}
+.card-with-overlay.disableElement {
+  margin-right: 0;
+}
+
+.card-horizontal .card-media img {
+  max-height: 400px;
+}
+
+.card-horizontal .card-media {
+  width: 200px;
+  aspect-ratio: 1;
+  object-fit: scale-down;
+}
+
+.card-vertical {
+  --width-card: clamp(30ch, 35ch, 88vw);
+  word-break: break-word;
+  hyphens: auto;
+}
+.card-vertical .card-media {
+  margin-bottom: 2ch;
+}
+.card-vertical .card-media img {
+  width: 200px;
+  aspect-ratio: 1;
+  object-fit: scale-down;
+}
+.card-horizontal {
+  /* width: fit-content; */
+  min-height: clamp(350px, 400px, 450px);
+  min-width: 550px;
+  max-width: 550px;
+  text-align: center;
+}
+
+.card-actions .btn {
+  width: clamp(200px, 240px, 280px);
+}
+
+.card-container.badge-wrapper {
+  margin: 0;
+}
+
+.card-container .btn.btn-float {
+  max-width: fit-content;
+  min-width: fit-content;
+  padding: 0.5ch;
+  position: absolute;
+  background-color: inherit;
+}
+.card-container .btn-float img {
+  margin: 0;
+}
+.card-vertical .btn-float {
+  top: 2%;
+  right: 0%;
+}
+
+.card-horizontal .btn-float {
+  top: -2%;
+  right: 0%;
+}
+
+.btn-float.wishlist-btn:hover {
+  background-color: #ee82ee33;
+}
+
+.card-container footer {
+  position: static;
+}
