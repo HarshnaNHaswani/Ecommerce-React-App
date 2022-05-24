@@ -1,0 +1,76 @@
+table {
+  width: 90%;
+  max-width: 80vw;
+}
+tr {
+  display: flex;
+  margin: 2ch;
+}
+
+td {
+  margin-left: auto;
+}
+
+.cart-total .total {
+  font-size: 1.33em;
+}
+.cart .card-container{
+  position: relative;
+}
+.cart .card-horizontal .btn-float {
+  top: 2.5%
+}
+.cart-total {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  border: 1px solid;
+  /* padding: 1ch; */
+}
+
+.cart.grid-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "cart-items order-details";
+  place-items: unset;
+  margin: 1ch;
+}
+
+.order-details {
+  grid-area: order-details;
+  margin: 1ch;
+}
+
+.cart-items {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 5ch;
+}
+.quantity{
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.quantity .btn.round,
+.quantity .quantity-input.form-input {
+  padding: 0;
+  margin: 8px 0;
+  width: 3ch;
+  font-size: 3ch;
+}
+.cart .btn {
+  margin: 0.5ch
+}
+.cart .card-horizontal {
+  max-height: 550px;
+}
+.total {
+  padding: 1ch 2ch;
+}
+@media screen and (max-width: 75em) {
+  .cart.grid-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: "order-details" "cart-items";
+
+  }
+}

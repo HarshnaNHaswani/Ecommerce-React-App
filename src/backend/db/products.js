@@ -145,7 +145,7 @@ export const products = [
     rating: "4",
     reviewers: "374",
     inStock: true,
-    fastDelivery: fasle,
+    fastDelivery: false,
     discount: 0,
     featured: false,
     media:
