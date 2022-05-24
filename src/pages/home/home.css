@@ -1,0 +1,11 @@
+.grid-container {
+  width: 100vw;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.grid-child{
+  margin: 1ch 0 0;
+  max-width: 80vw;
+  justify-self: center;
+}

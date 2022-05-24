@@ -1,4 +1,4 @@
-## E-commerce 
+## E-commerce
 
 - Made with React
 
@@ -6,12 +6,19 @@
 
 - Features:
 
-  - Authentication - Login, Signup, Logout, ForgotPassword
+  - Authentication - Login(remember me), Signup(input validation), Logout, ForgotPassword
 
   - Wishlist - Add/ Remove from Wishlist, Move to Cart
   - cart -Add/ Remove from Cart, Move to Wishlist, Increase/Decrease Quantity
 
-  - Products Listing with sort (price) and filter(inStock, categories, price range, rating)
+  - Products Listing with
+    - sort
+      - price
+    - filter(
+      - inStock
+      - featured
+      - categories
+      - sub categories
+      - price range
+      - rating)
   - Home
-
-
