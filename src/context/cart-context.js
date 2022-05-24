@@ -2,7 +2,6 @@ import { createContext, useContext, useState, useEffect } from "react";
 import { addItem } from "../services/addItem";
 import { removeItem } from "../services/removeItem";
 import { updateCartItem } from "../services/updateCartItem";
-import { v4 as uuid } from "uuid";
 const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
