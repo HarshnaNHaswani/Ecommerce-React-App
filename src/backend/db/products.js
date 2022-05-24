@@ -10,8 +10,11 @@ export const products = [
     rating: "3",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 15,
     featured: false,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722538/ecomm/images/chocolates/caramalized-white-chocolate_agzx3k.jpg"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722538/ecomm/images/chocolates/caramalized-white-chocolate_agzx3k.jpg",
   },
   {
     _id: uuid(),
@@ -22,8 +25,11 @@ export const products = [
     rating: "4",
     reviewers: "725",
     inStock: true,
+    fastDelivery: false,
+    discount: 0,
     featured: false,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722539/ecomm/images/chocolates/assorted_xjof7a.png"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722539/ecomm/images/chocolates/assorted_xjof7a.png",
   },
   {
     _id: uuid(),
@@ -34,8 +40,11 @@ export const products = [
     rating: "4.5",
     reviewers: "725",
     inStock: false,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722539/ecomm/images/chocolates/dark-chocolate_smansh.jpg"    
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722539/ecomm/images/chocolates/dark-chocolate_smansh.jpg",
   },
   {
     _id: uuid(),
@@ -46,8 +55,11 @@ export const products = [
     rating: "4",
     reviewers: "725",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722538/ecomm/images/chocolates/german-chocolate_ukeywz.jpg"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722538/ecomm/images/chocolates/german-chocolate_ukeywz.jpg",
   },
   {
     _id: uuid(),
@@ -58,8 +70,11 @@ export const products = [
     rating: "4.5",
     reviewers: "725",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722541/ecomm/images/chocolates/irish-chocolate_ik2qo1.jpg"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722541/ecomm/images/chocolates/irish-chocolate_ik2qo1.jpg",
   },
   {
     _id: uuid(),
@@ -70,8 +85,11 @@ export const products = [
     rating: "3.5",
     reviewers: "725",
     inStock: true,
+    fastDelivery: true,
+    discount: 110,
     featured: false,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722540/ecomm/images/chocolates/milk-chocolate_fdkr2l.jpg"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722540/ecomm/images/chocolates/milk-chocolate_fdkr2l.jpg",
   },
   {
     _id: uuid(),
@@ -82,8 +100,11 @@ export const products = [
     rating: "4",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: true,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722540/ecomm/images/chocolates/ruby-chocolate_rjggpc.png"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722540/ecomm/images/chocolates/ruby-chocolate_rjggpc.png",
   },
   {
     _id: uuid(),
@@ -94,8 +115,11 @@ export const products = [
     rating: "3.5",
     reviewers: "1050",
     inStock: false,
+    fastDelivery: true,
+    discount: 10,
     featured: false,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722540/ecomm/images/chocolates/swiss-chocolate_lhjmjc.jpg"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722540/ecomm/images/chocolates/swiss-chocolate_lhjmjc.jpg",
   },
   {
     _id: uuid(),
@@ -106,8 +130,11 @@ export const products = [
     rating: "3.5",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 10,
     featured: true,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722547/ecomm/images/chocolates/unsweetened-chocolate_vfffhy.jpg"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722547/ecomm/images/chocolates/unsweetened-chocolate_vfffhy.jpg",
   },
   {
     _id: uuid(),
@@ -118,8 +145,11 @@ export const products = [
     rating: "4",
     reviewers: "374",
     inStock: true,
+    fastDelivery: fasle,
+    discount: 0,
     featured: false,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722540/ecomm/images/chocolates/vegan-white-chocolate-caramalized-with-nuts_itvy0l.jpg"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722540/ecomm/images/chocolates/vegan-white-chocolate-caramalized-with-nuts_itvy0l.jpg",
   },
   {
     _id: uuid(),
@@ -130,8 +160,11 @@ export const products = [
     rating: "3.5",
     reviewers: "374",
     inStock: true,
+    fastDelivery: true,
+    discount: 10,
     featured: false,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722540/ecomm/images/chocolates/white-chocolate_vqeclm.jpg"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722540/ecomm/images/chocolates/white-chocolate_vqeclm.jpg",
   },
   {
     _id: uuid(),
@@ -142,8 +175,11 @@ export const products = [
     rating: "4",
     reviewers: "374",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722539/ecomm/images/Cookies/bar-cookies/cream-and-cookie_zz4l7n.jpg"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722539/ecomm/images/Cookies/bar-cookies/cream-and-cookie_zz4l7n.jpg",
   },
   {
     _id: uuid(),
@@ -154,8 +190,11 @@ export const products = [
     rating: "3.5",
     reviewers: "374",
     inStock: true,
+    fastDelivery: true,
+    discount: 10,
     featured: false,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722540/ecomm/images/Cookies/bar-cookies/mixed-berries-and-nuts_o9yr4o.jpg"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722540/ecomm/images/Cookies/bar-cookies/mixed-berries-and-nuts_o9yr4o.jpg",
   },
   {
     _id: uuid(),
@@ -166,8 +205,11 @@ export const products = [
     rating: "4.5",
     reviewers: "1050",
     inStock: false,
+    fastDelivery: true,
+    discount: 0,
     featured: true,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722540/ecomm/images/Cookies/bar-cookies/soft-chocolate-chip-cookie-bars_matmgw.jpg"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722540/ecomm/images/Cookies/bar-cookies/soft-chocolate-chip-cookie-bars_matmgw.jpg",
   },
   {
     _id: uuid(),
@@ -178,8 +220,11 @@ export const products = [
     rating: "4",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722540/ecomm/images/Cookies/drop-cookies/choco-chip_osslyf.jpg"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722540/ecomm/images/Cookies/drop-cookies/choco-chip_osslyf.jpg",
   },
   {
     _id: uuid(),
@@ -190,8 +235,11 @@ export const products = [
     rating: "3",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: false,
+    discount: 15,
     featured: false,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722541/ecomm/images/Cookies/drop-cookies/assorted-vanilla_wqdrfy.jpg"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722541/ecomm/images/Cookies/drop-cookies/assorted-vanilla_wqdrfy.jpg",
   },
   {
     _id: uuid(),
@@ -202,8 +250,11 @@ export const products = [
     rating: "4.5",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: true,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722541/ecomm/images/Cookies/drop-cookies/cranberry-drop_ohmvve.jpg"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722541/ecomm/images/Cookies/drop-cookies/cranberry-drop_ohmvve.jpg",
   },
   {
     _id: uuid(),
@@ -214,8 +265,11 @@ export const products = [
     rating: "3.5",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 10,
     featured: false,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722541/ecomm/images/Cookies/drop-cookies/Double-Chocolate-Drop_uk4u9j.jpg"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722541/ecomm/images/Cookies/drop-cookies/Double-Chocolate-Drop_uk4u9j.jpg",
   },
   {
     _id: uuid(),
@@ -226,8 +280,11 @@ export const products = [
     rating: "3.5",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 10,
     featured: false,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722541/ecomm/images/Cookies/drop-cookies/lemon-drop_pemwh1.jpg"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722541/ecomm/images/Cookies/drop-cookies/lemon-drop_pemwh1.jpg",
   },
   {
     _id: uuid(),
@@ -238,8 +295,11 @@ export const products = [
     rating: "3",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 15,
     featured: false,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722542/ecomm/images/Cookies/drop-cookies/pumpkin-drop_tfpjpa.jpg"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722542/ecomm/images/Cookies/drop-cookies/pumpkin-drop_tfpjpa.jpg",
   },
   {
     _id: uuid(),
@@ -250,8 +310,11 @@ export const products = [
     rating: "4",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: false,
+    discount: 0,
     featured: false,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722542/ecomm/images/Cookies/drop-cookies/sour-cream_uvzesj.jpg"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722542/ecomm/images/Cookies/drop-cookies/sour-cream_uvzesj.jpg",
   },
   {
     _id: uuid(),
@@ -262,8 +325,11 @@ export const products = [
     rating: "3.5",
     reviewers: "1050",
     inStock: false,
+    fastDelivery: true,
+    discount: 10,
     featured: false,
-    media: "https://res.cloudinary.com/harshna/image/upload/v1652722541/ecomm/images/Cookies/filled/assorted-jam-filled_m9jesc.jpg"
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722541/ecomm/images/Cookies/filled/assorted-jam-filled_m9jesc.jpg",
   },
   {
     _id: uuid(),
@@ -274,8 +340,11 @@ export const products = [
     rating: "3.5",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 10,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722542/ecomm/images/Cookies/filled/cream-cheese-stuffed-choco_aszl72.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722542/ecomm/images/Cookies/filled/cream-cheese-stuffed-choco_aszl72.jpg",
   },
   {
     _id: uuid(),
@@ -286,8 +355,11 @@ export const products = [
     rating: "4.5",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722541/ecomm/images/Cookies/filled/chocolate-filled-cookies_btvhoy.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722541/ecomm/images/Cookies/filled/chocolate-filled-cookies_btvhoy.jpg",
   },
   {
     _id: uuid(),
@@ -298,8 +370,11 @@ export const products = [
     rating: "2.5",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: false,
+    discount: 20,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722541/ecomm/images/Cookies/filled/caramel-filled_apgyos.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722541/ecomm/images/Cookies/filled/caramel-filled_apgyos.jpg",
   },
   {
     _id: uuid(),
@@ -310,8 +385,11 @@ export const products = [
     rating: "4",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722542/ecomm/images/Cookies/filled/date-filled_g1eern.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722542/ecomm/images/Cookies/filled/date-filled_g1eern.jpg",
   },
   {
     _id: uuid(),
@@ -322,8 +400,11 @@ export const products = [
     rating: "4.5",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722542/ecomm/images/Cookies/filled/nutella-stuffed_r20y7a.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722542/ecomm/images/Cookies/filled/nutella-stuffed_r20y7a.jpg",
   },
   {
     _id: uuid(),
@@ -334,8 +415,11 @@ export const products = [
     rating: "4",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722542/ecomm/images/Cookies/filled/strawberry-delight_ks1jaq.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722542/ecomm/images/Cookies/filled/strawberry-delight_ks1jaq.jpg",
   },
   {
     _id: uuid(),
@@ -346,331 +430,415 @@ export const products = [
     rating: "4",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722542/ecomm/images/Cookies/fried/cookie-dough-deep-fried_i6d9uh.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722542/ecomm/images/Cookies/fried/cookie-dough-deep-fried_i6d9uh.jpg",
   },
   {
     _id: uuid(),
     title: "Butter - Assorted Molded Cookies 1",
     price: "250",
     categories: ["cookies"],
-    subCategories: [ "molded"],
+    subCategories: ["molded"],
     rating: "2.5",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: false,
+    discount: 20,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722543/ecomm/images/Cookies/molded/assorted-butter_sefro8.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722543/ecomm/images/Cookies/molded/assorted-butter_sefro8.jpg",
   },
   {
     _id: uuid(),
     title: "Cream Pie cookie cups",
     price: "300",
     categories: ["cookies"],
-    subCategories: [ "molded", "filled"],
+    subCategories: ["molded", "filled"],
     rating: "3.5",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 10,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722543/ecomm/images/Cookies/molded/Cream-Pie-Cookie-Cups_ob2r3d.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722543/ecomm/images/Cookies/molded/Cream-Pie-Cookie-Cups_ob2r3d.jpg",
   },
   {
     _id: uuid(),
     title: "Ginger-bread man Cookies",
     price: "250",
     categories: ["cookies"],
-    subCategories: [ "molded"],
+    subCategories: ["molded"],
     rating: "3.5",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 10,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722543/ecomm/images/Cookies/molded/gingerbread-man_ugigsh.png'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722543/ecomm/images/Cookies/molded/gingerbread-man_ugigsh.png",
   },
   {
     _id: uuid(),
     title: "Almond butter Cookies",
     price: "209",
     categories: ["cookies"],
-    subCategories: [ "nobake"],
+    subCategories: ["nobake"],
     rating: "4",
     reviewers: "157",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722543/ecomm/images/Cookies/no-bake/almond-butter_dsttzi.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722543/ecomm/images/Cookies/no-bake/almond-butter_dsttzi.jpg",
   },
   {
     _id: uuid(),
     title: "Choco peanut butter Cookies",
     price: "219",
     categories: ["cookies"],
-    subCategories: [ "nobake"],
+    subCategories: ["nobake"],
     rating: "3.5",
     reviewers: "157",
     inStock: true,
+    fastDelivery: true,
+    discount: 10,
     featured: true,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722543/ecomm/images/Cookies/no-bake/choco-peanut-butter_giwdvh.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722543/ecomm/images/Cookies/no-bake/choco-peanut-butter_giwdvh.jpg",
   },
   {
     _id: uuid(),
     title: "Oatmeal peanut butter Cookies",
     price: "219",
     categories: ["cookies"],
-    subCategories: [ "nobake"],
+    subCategories: ["nobake"],
     rating: "3.5",
     reviewers: "157",
     inStock: true,
+    fastDelivery: true,
+    discount: 10,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722543/ecomm/images/Cookies/no-bake/oatmeal-peanut-butter_httzcf.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722543/ecomm/images/Cookies/no-bake/oatmeal-peanut-butter_httzcf.jpg",
   },
   {
     _id: uuid(),
     title: "Butter Spritz - Assorted pressed Cookies 1",
     price: "219",
     categories: ["cookies"],
-    subCategories: [ "pressed"],
+    subCategories: ["pressed"],
     rating: "3.5",
     reviewers: "157",
     inStock: true,
+    fastDelivery: true,
+    discount: 10,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722543/ecomm/images/Cookies/pressed/assorted-butter_itmwpy.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722543/ecomm/images/Cookies/pressed/assorted-butter_itmwpy.jpg",
   },
   {
     _id: uuid(),
     title: "Cream-cheese Spritz - Assorted pressed Cookies 2",
     price: "219",
     categories: ["cookies"],
-    subCategories: [ "pressed"],
+    subCategories: ["pressed"],
     rating: "3.5",
     reviewers: "157",
     inStock: true,
+    fastDelivery: true,
+    discount: 10,
     featured: true,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722543/ecomm/images/Cookies/pressed/cream-cheese-assorted_babm2r.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722543/ecomm/images/Cookies/pressed/cream-cheese-assorted_babm2r.jpg",
   },
   {
     _id: uuid(),
     title: "flower-shaped butter Spritz",
     price: "209",
     categories: ["cookies"],
-    subCategories: [ "pressed"],
+    subCategories: ["pressed"],
     rating: "3.5",
     reviewers: "157",
     inStock: true,
+    fastDelivery: true,
+    discount: 10,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722543/ecomm/images/Cookies/pressed/flower_v6dvyn.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722543/ecomm/images/Cookies/pressed/flower_v6dvyn.jpg",
   },
   {
     _id: uuid(),
     title: "snowflake-shaped vanilla almond Spritz",
     price: "209",
     categories: ["cookies"],
-    subCategories: [ "pressed"],
+    subCategories: ["pressed"],
     rating: "3.5",
     reviewers: "157",
     inStock: true,
+    fastDelivery: false,
+    discount: 10,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722544/ecomm/images/Cookies/pressed/snow-flake_zz65mu.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722544/ecomm/images/Cookies/pressed/snow-flake_zz65mu.jpg",
   },
   {
     _id: uuid(),
     title: "Butter Refrigerator cookies",
     price: "150",
     categories: ["cookies"],
-    subCategories: [ "refrigerator"],
+    subCategories: ["refrigerator"],
     rating: "3.5",
     reviewers: "157",
     inStock: true,
+    fastDelivery: true,
+    discount: 10,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722544/ecomm/images/Cookies/refrigerator/butter_l4badx.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722544/ecomm/images/Cookies/refrigerator/butter_l4badx.jpg",
   },
   {
     _id: uuid(),
     title: "Cherry Almond Icebox cookies",
     price: "175",
     categories: ["cookies"],
-    subCategories: [ "refrigerator"],
+    subCategories: ["refrigerator"],
     rating: "4",
     reviewers: "157",
     inStock: false,
+    fastDelivery: true,
+    discount: 0,
     featured: true,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722544/ecomm/images/Cookies/refrigerator/cherry-almond_e51kup.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722544/ecomm/images/Cookies/refrigerator/cherry-almond_e51kup.jpg",
   },
   {
     _id: uuid(),
     title: "Choco-chip Icebox cookies",
     price: "200",
     categories: ["cookies"],
-    subCategories: [ "refrigerator"],
+    subCategories: ["refrigerator"],
     rating: "3.5",
     reviewers: "157",
     inStock: true,
+    fastDelivery: true,
+    discount: 10,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722544/ecomm/images/Cookies/refrigerator/choco-chip_a1vhqu.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722544/ecomm/images/Cookies/refrigerator/choco-chip_a1vhqu.jpg",
   },
   {
     _id: uuid(),
     title: "Choco-dipped Icebox cookies",
     price: "200",
     categories: ["cookies"],
-    subCategories: [ "refrigerator"],
+    subCategories: ["refrigerator"],
     rating: "3.5",
     reviewers: "157",
     inStock: true,
+    fastDelivery: true,
+    discount: 10,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652724323/ecomm/images/Cookies/refrigerator/choco-dipped_ydlfw2.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652724323/ecomm/images/Cookies/refrigerator/choco-dipped_ydlfw2.jpg",
   },
   {
     _id: uuid(),
     title: "Choco-Ice Sandwich cookies",
     price: "329",
     categories: ["cookies"],
-    subCategories: [ "refrigerator", "sandwich"],
+    subCategories: ["refrigerator", "sandwich"],
     rating: "4.5",
     reviewers: "157",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722544/ecomm/images/Cookies/refrigerator/choco-ice-sandwich_x6bcg2.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722544/ecomm/images/Cookies/refrigerator/choco-ice-sandwich_x6bcg2.jpg",
   },
   {
     _id: uuid(),
     title: "Double-Chocolate Icebox cookies",
     price: "250",
     categories: ["cookies"],
-    subCategories: [ "refrigerator"],
+    subCategories: ["refrigerator"],
     rating: "3.5",
     reviewers: "157",
     inStock: true,
+    fastDelivery: true,
+    discount: 10,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722544/ecomm/images/Cookies/refrigerator/double-chocolate_et5ptu.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722544/ecomm/images/Cookies/refrigerator/double-chocolate_et5ptu.jpg",
   },
   {
     _id: uuid(),
     title: "Choco-pinwheel swirl cookies",
     price: "195",
     categories: ["cookies"],
-    subCategories: [ "rolled", "refrigerator"],
+    subCategories: ["rolled", "refrigerator"],
     rating: "3.5",
     reviewers: "157",
     inStock: true,
+    fastDelivery: true,
+    discount: 10,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722544/ecomm/images/Cookies/rolled/choco-pinwheel-swirl_pbfhnj.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722544/ecomm/images/Cookies/rolled/choco-pinwheel-swirl_pbfhnj.jpg",
   },
   {
     _id: uuid(),
     title: "Cinnamon roll cookies",
     price: "266",
     categories: ["cookies"],
-    subCategories: [ "rolled"],
+    subCategories: ["rolled"],
     rating: "4.5",
     reviewers: "157",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722544/ecomm/images/Cookies/rolled/cinnamon-roll_rvpa7y.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722544/ecomm/images/Cookies/rolled/cinnamon-roll_rvpa7y.jpg",
   },
   {
     _id: uuid(),
     title: "Coconut-sugar roll cookies",
     price: "199",
     categories: ["cookies"],
-    subCategories: [ "rolled"],
+    subCategories: ["rolled"],
     rating: "4",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722545/ecomm/images/Cookies/rolled/coconut-sugar_c4raaz.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722545/ecomm/images/Cookies/rolled/coconut-sugar_c4raaz.jpg",
   },
   {
     _id: uuid(),
     title: "Nutella roll cookies",
     price: "255",
     categories: ["cookies"],
-    subCategories: [ "rolled"],
+    subCategories: ["rolled"],
     rating: "4",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722545/ecomm/images/Cookies/rolled/nutella-roll_jjlnau.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722545/ecomm/images/Cookies/rolled/nutella-roll_jjlnau.jpg",
   },
   {
     _id: uuid(),
     title: "Choco-chip Mint sandwich cookies",
     price: "250",
     categories: ["cookies"],
-    subCategories: [ "sandwich"],
+    subCategories: ["sandwich"],
     rating: "4",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722545/ecomm/images/Cookies/sandwich/choco-chip-mint_nqqraw.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722545/ecomm/images/Cookies/sandwich/choco-chip-mint_nqqraw.jpg",
   },
   {
     _id: uuid(),
     title: "Dark chocolate Mint sandwich cookies",
     price: "279",
     categories: ["cookies"],
-    subCategories: [ "sandwich"],
+    subCategories: ["sandwich"],
     rating: "4",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722545/ecomm/images/Cookies/sandwich/dark-choco-mint_oi1vjo.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722545/ecomm/images/Cookies/sandwich/dark-choco-mint_oi1vjo.jpg",
   },
   {
     _id: uuid(),
     title: "Choco peanut butter sandwich cookies",
     price: "270",
     categories: ["cookies"],
-    subCategories: [ "sandwich"],
+    subCategories: ["sandwich"],
     rating: "4",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722545/ecomm/images/Cookies/sandwich/choco-peanut-butter_mu64i2.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722545/ecomm/images/Cookies/sandwich/choco-peanut-butter_mu64i2.jpg",
   },
   {
     _id: uuid(),
     title: "Dark Chocolate sandwich cookies",
     price: "270",
     categories: ["cookies"],
-    subCategories: [ "sandwich"],
+    subCategories: ["sandwich"],
     rating: "4",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722545/ecomm/images/Cookies/sandwich/dark-choco_uqxjy1.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722545/ecomm/images/Cookies/sandwich/dark-choco_uqxjy1.jpg",
   },
   {
     _id: uuid(),
     title: "German Chocolate sandwich cookies",
     price: "289",
     categories: ["cookies"],
-    subCategories: [ "sandwich"],
+    subCategories: ["sandwich"],
     rating: "4.5",
     reviewers: "1050",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722545/ecomm/images/Cookies/sandwich/german-choco_b4uhrp.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722545/ecomm/images/Cookies/sandwich/german-choco_b4uhrp.jpg",
   },
   {
     _id: uuid(),
     title: "Vanilla citrus sandwich cookies",
     price: "245",
     categories: ["cookies"],
-    subCategories: [ "sandwich"],
+    subCategories: ["sandwich"],
     rating: "4.5",
     reviewers: "260",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: true,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722545/ecomm/images/Cookies/sandwich/vanilla-citrus_z68ogy.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722545/ecomm/images/Cookies/sandwich/vanilla-citrus_z68ogy.jpg",
   },
   {
     _id: uuid(),
     title: "Vegan - chocolate sandwich cookies",
     price: "295",
     categories: ["cookies", "vegan", "eggless"],
-    subCategories: [ "sandwich"],
+    subCategories: ["sandwich"],
     rating: "4.5",
     reviewers: "260",
     inStock: true,
+    fastDelivery: true,
+    discount: 0,
     featured: false,
-    media: 'https://res.cloudinary.com/harshna/image/upload/v1652722545/ecomm/images/Cookies/sandwich/vegan-cookie_xlirdy.jpg'
+    media:
+      "https://res.cloudinary.com/harshna/image/upload/v1652722545/ecomm/images/Cookies/sandwich/vegan-cookie_xlirdy.jpg",
   },
 ];
