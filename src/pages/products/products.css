@@ -1,0 +1,80 @@
+
+.product-listing {
+  display: block;
+}
+
+.product-listing > * {
+  justify-self: center;
+}
+
+.product-listing > .products {
+  display: flex;
+  gap: 2ch;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.product-listing > .products > * {
+  justify-self: center;
+  align-self: flex-start;
+}
+.product-listing > .products > .card-horizontal {
+  align-self: flex-start;
+}
+.product-listing {
+  margin: 2vh 2vw;
+}
+.filter .form,
+.product-listing .form {
+  box-shadow: 0 0 3px var(--color-shadow);
+  height: 60vh;
+  overflow-y: scroll;
+  flex-flow: row wrap;
+  width: 30rem;
+}
+.filter-type-toggle .btn,
+.filter-type-toggle .reset-categories,
+.product-listing .reset-categories {
+  width: fit-content;
+  padding: 0.5ch;
+}
+
+.filter-type-toggle .form {
+  justify-content: flex-end;
+}
+
+.filter-type-toggle,
+.filter-type-toggle * {
+  margin-left: auto;
+  text-align: right;
+}
+.products .rating-wrapper {
+  margin: 1ch 0 3ch 8ch;
+}
+.products .card-container{
+  position: relative;
+}
+@media screen and (min-width: 60em) {
+  html {
+    font-size: 65.4%;
+  }
+  body {
+    margin: 0.25rem;
+  }
+  .product-listing {
+    display: grid;
+    grid-template-areas: "filters products products";
+    justify-content: center;
+    gap: 2vw;
+  }
+  .product-listing > .filter {
+    grid-area: "filters";
+  }
+  
+  .product-listing > .products {
+    grid-area: "products";
+  }
+  .filter-form {
+    display: flex;
+    flex-flow: column wrap;
+  }
+}
