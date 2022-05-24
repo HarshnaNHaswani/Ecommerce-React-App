@@ -4,7 +4,7 @@ import { addItem } from "../services/addItem";
 import { removeItem } from "../services/removeItem";
 const WishlistContext = createContext();
 const initialState = {
-  items: [ ],
+  items: [],
   totalQuantity: 0,
   error: null,
   loading: false,
@@ -64,6 +64,7 @@ const WishlistProvider = ({ children }) => {
         setError(error);
       });
   };
+  const setWishlistToInitialState = () => setWishlist(initialState)
 
   useEffect(() => {
     const token =
@@ -94,7 +95,8 @@ const WishlistProvider = ({ children }) => {
         addToWishlist,
         removeFromWishlist,
         clearWishlist,
-        moveToCart
+        moveToCart,
+        setWishlistToInitialState
       }}
     >
       {children}

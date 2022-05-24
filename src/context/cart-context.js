@@ -108,6 +108,8 @@ const CartProvider = ({ children }) => {
       setError(error);
     }
   };
+  const setCartToInitialState = () => setCart(initialState)
+
   useEffect(() => {
     const token =
       localStorage.getItem("token") ?? sessionStorage.getItem("token") ?? "";
@@ -137,6 +139,7 @@ const CartProvider = ({ children }) => {
         removeFromCart,
         updateQuantity,
         clearCart,
+        setCartToInitialState
       }}
     >
       {children}
