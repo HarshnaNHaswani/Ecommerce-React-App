@@ -47,7 +47,6 @@ export const ProductListing = () => {
       : addToWishlist(product);
   };
   const cartClickHandler = (id, product) => {
-    console.log(cart, wishlist);
     isInArray(cart, id) ? navigate("/cart") : addToCart(product);
   };
 

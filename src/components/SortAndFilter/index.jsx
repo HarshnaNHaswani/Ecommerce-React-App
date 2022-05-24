@@ -1,7 +1,7 @@
 import React from "react";
 import { useProductListing } from "../../context/product-listing-context";
 import { CategoryFilter } from "./CategoryFilter";
-import { HasFastDelivery } from "./hasFastDelivery";
+import { HasFastDelivery } from "./HasFastDelivery";
 import { InStockFliter } from "./InStockFliter";
 import { IsFeaturedFilter } from "./IsFeaturedFilter";
 import { PriceRange } from "./PriceRange";
