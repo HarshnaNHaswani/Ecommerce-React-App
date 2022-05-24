@@ -1,36 +1,64 @@
 @import url("https://design-with-ira.netlify.app/installationlinks/main.css");
 @import url("https://fonts.googleapis.com/css2?family=Martel:wght@600&display=swap");
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,900;1,300;1,900&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 :root {
   --color-primary: #402220;
   --color-primary-inverse: #c9bebe;
-  --color-secondary: #634F40;
+  --color-secondary: #634f40;
   --color-secondary-inverse: #ffffff;
   --color-accent: #da7528;
   --color-accent-inverse: #000000;
   --color-text: #2a464f;
-  --color-background: #EDE2D7;
+  --color-background: #ede2d7;
   --color-shadow: #00000033;
+  --color-background-card: #312a2a;
+  --color-text-card: #9f9f9f;
+  --width-min-grid-fit: 25vw;
+  --width-max-grid-fit: 400px;
+  --color-status-error: #bd000077;
+  --color-status-info: #669beb77;
+  --color-status-success: #30a53099;
 }
 body {
-  width: 100vw;
-  padding: 0.25rem;
+  width: clamp(100vw, 100vw, 100vw);
+  padding: 0;
   font-size: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Noto Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
+h1,
+h2 {
+  font-weight: 700;
+  font-style: italic;
+}
+
+h3 {
+  font-size: 1.33em;
+  font-style: italic;
+}
+
+main > h2:first-of-type {
+  font-size: 3em;
+  margin: 2ch;
+}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Martel", serif;
+  /* font-family: 'Noto Serif Display', serif; */
+  /* font-style: italic; */
+  font-family: "Amiri", serif;
 }
 div {
   margin: unset;
@@ -39,8 +67,72 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+main {
+  text-align: center;
+}
+
+.number {
+  font-family: "Montserrat", sans-serif;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.width-sm {
+  max-width: 90vw;
+  word-wrap: break-word;
+}
+.width-sm .form,
+.width-sm .form-item::placeholder,
+.width-sm p.form-item,
+.width-sm form-item > label {
+  font-size: 0.8em;
+}
 
 .form-input,
 .form-button {
   font-size: 1em;
+}
+
+.form-item legend,
+.form-item > label,
+.form-item p,
+.form-item::placeholder {
+  opacity: 0.85;
+  font-size: 1em;
+}
+
+.form p > label {
+  font-size: 0.8em;
+}
+
+.form-input:focus::placeholder {
+  color: var(--color-primary);
+  opacity: 0.95;
+}
+.form-input.password {
+  text-transform: none;
+}
+.form-input.password::placeholder {
+  text-transform: uppercase;
+}
+@media screen and (min-width: 60em) {
+  html {
+    font-size: 65.4%;
+  }
+  body {
+    margin: 0.25rem;
+  }
+}
+@media screen and (max-width: 25em) {
+  .form-item {
+    word-wrap: break-word;
+  }
+  .width-sm {
+    font-size: 0.8em;
+  }
 }
