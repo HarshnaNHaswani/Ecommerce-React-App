@@ -2,12 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useCategories } from "../../context/categories-context";
 
-export function FeaturedCategoriesCard({
-  categoryName,
-  _id,
-  media,
-  description,
-}) {
+export function FeaturedCategoriesCard({ category }) {
   const { toggleSubCategoryState } = useCategories();
   const navigate = useNavigate();
 
@@ -15,6 +10,7 @@ export function FeaturedCategoriesCard({
     toggleSubCategoryState(id);
     navigate("/product-listing");
   };
+  const { categoryName, _id, media, description } = category;
   return (
     <div
       className="card-container card-vertical grid-child"

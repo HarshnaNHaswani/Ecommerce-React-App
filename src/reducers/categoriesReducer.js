@@ -75,8 +75,7 @@ export const categoriesReducer = (state, action) => {
         {}
       );
       return {
-        ...state
-        ,
+        ...state,
         categoryState: {
           ...categoryState,
           [action.payload]: {

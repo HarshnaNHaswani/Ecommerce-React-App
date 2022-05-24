@@ -39,7 +39,7 @@ export function CategoryFilter() {
             const slugifiedName = slugify(categoryName);
             return (
               <section key={id}>
-                <i
+                <input
                   type="checkbox"
                   id={slugifiedName}
                   value={categoryState[id].name}

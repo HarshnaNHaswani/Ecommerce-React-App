@@ -3,7 +3,8 @@ import { useCart } from "../../context/cart-context";
 import { useWindowDimension } from "../../context/window-context";
 import wishlistIconFilled from "../../assets/wishlist-filled.png";
 import wishlistIcon from "../../assets/wishlist.png";
-
+import { useAlert } from "../../context/alert-context";
+import Loading from "../../assets/loading.gif";
 import "./cart.css";
 import { OrderDetails } from "./OrderDetails";
 import { Card } from "../../components/Card/Card";
@@ -30,9 +31,12 @@ export const Cart = () => {
     updateQuantity({ type: "increment", product });
   const decreaseQuantityHandler = (product) =>
     updateQuantity({ type: "decrement", product });
-  const { items } = cart;
+  const { items, error, loading } = cart;
+  const { showAlert } = useAlert();
   return (
     <>
+      {error && showAlert({ text: "An Error Occurred", status: "error" })}
+      {loading && <img src={Loading} alt="loading..." />}
       <h2 className="heading gutter-y-xl">Your Cart</h2>
       <button onClick={clearCart} className="clear-cart outline-secondary">
         Clear Cart

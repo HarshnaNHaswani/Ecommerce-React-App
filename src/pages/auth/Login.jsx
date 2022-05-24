@@ -36,11 +36,14 @@ export const Login = () => {
         updateAllUserDetails({ ...response.data.foundUser, address: [] });
         if (loginData.rememberMe) {
           localStorage.setItem("token", response.data.encodedToken);
-          localStorage.setItem("user", JSON.stringify({
-            firstName: response.data.foundUser.firstName,
-            lastName: response.data.foundUser.lastName,
-            email: response.data.foundUser.email
-          }))
+          localStorage.setItem(
+            "user",
+            JSON.stringify({
+              firstName: response.data.foundUser.firstName,
+              lastName: response.data.foundUser.lastName,
+              email: response.data.foundUser.email,
+            })
+          );
           sessionStorage.setItem("token", response.data.encodedToken);
         } else sessionStorage.setItem("token", response.data.encodedToken);
         setLoginData(initialData);
@@ -68,13 +71,11 @@ export const Login = () => {
     }
   };
 
-  // useEffect(() => {
-  //   if (isLoggedIn) {
-  //     location?.state?.from?.pathname
-  //     ? navigate(location.state.from.pathname, { replace: true })
-  //     : navigate("/");
-  //   }
-  // }, [isLoggedIn])
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      navigate("/");
+    }
+  }, []);
   return (
     <>
       {error && <p className="status-error-outline status-error-bg">{error}</p>}

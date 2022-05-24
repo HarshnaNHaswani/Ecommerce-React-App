@@ -50,8 +50,10 @@ const CartProvider = ({ children }) => {
       error: "",
       loading: false,
     }));
-    findCartTotal();
   };
+  useEffect(() => {
+    findCartTotal();
+  }, [cart.items]);
   const clearCart = () => {
     Promise.all([...cart.items].map((item) => removeFromCart(item)))
       .then(() => {
@@ -108,7 +110,7 @@ const CartProvider = ({ children }) => {
       setError(error);
     }
   };
-  const setCartToInitialState = () => setCart(initialState)
+  const setCartToInitialState = () => setCart(initialState);
 
   useEffect(() => {
     const token =
@@ -139,7 +141,7 @@ const CartProvider = ({ children }) => {
         removeFromCart,
         updateQuantity,
         clearCart,
-        setCartToInitialState
+        setCartToInitialState,
       }}
     >
       {children}

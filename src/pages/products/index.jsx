@@ -13,6 +13,8 @@ import "./products.css";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
+import { useAlert } from "../../context/alert-context";
+import Loading from "../../assets/loading.gif";
 export const ProductListing = () => {
   const { user } = useUser();
 
@@ -38,6 +40,8 @@ export const ProductListing = () => {
     minPrice,
     sortByPrice,
   } = productsListingState;
+
+  const { showAlert } = useAlert();
   const navigate = useNavigate();
   const isInArray = (array, id) =>
     array.filter((item) => item["_id"] === id).length ? true : false;
@@ -95,6 +99,11 @@ export const ProductListing = () => {
   };
   return (
     <>
+      {productListingError.serverError &&
+        showAlert({ status: "error", text: "Server Error!" })}
+      {productListingError.clientError &&
+        showAlert({ status: "error", text: "Client Error! Try Again!" })}
+      {productListingError.loading && <img src={Loading} alt="loading..." />}
       <h2 className="heading gutter-y-xl">Our Products</h2>
       {windowWidth < 1350 && (
         <div className="filter-type-toggle">

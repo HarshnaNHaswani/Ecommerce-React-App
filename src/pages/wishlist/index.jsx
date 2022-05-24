@@ -5,6 +5,9 @@ import { useWishlist } from "../../context/wishlist-context";
 import wishlistIconFilled from "../../assets/wishlist-filled.png";
 import wishlistIcon from "../../assets/wishlist.png";
 import "./wishlist.css";
+import { useAlert } from "../../context/alert-context";
+import Loading from "../../assets/loading.gif";
+
 export const Wishlist = () => {
   const {
     wishlist,
@@ -13,7 +16,9 @@ export const Wishlist = () => {
     moveToCart,
     clearWishlist,
   } = useWishlist();
-  const { items } = wishlist;
+
+  const {showAlert} = useAlert();
+  const { items, error, loading } = wishlist;
 
   const isInWishlist =(id) => [...items].filter((item) => item["_id"] === id).length > 0
   const likeButtonClickHandler = (product) => {
@@ -32,6 +37,8 @@ export const Wishlist = () => {
   };
   return (
     <>
+      {error && showAlert({text:"An Error Occurred", status: "error"})}
+      {loading && <img src={Loading} alt="loading..."/>}
       <h2 className="heading gutter-y-xl">Your Wishlist</h2>
       <button onClick={clearWishlist} className="clear-cart outline-secondary">
         Clear Wishlist
@@ -39,7 +46,7 @@ export const Wishlist = () => {
       <div className="wishlist grid-fit">
         {items.map((item) => (
           <Card product={item} childClass="grid-child" key={item["_id"]}>
-            <button className="btn bg-secondary" onClick={moveToCartHandler}>
+            <button className="btn bg-secondary" onClick={() => moveToCartHandler(item)}>
               Move to Cart
             </button>
 

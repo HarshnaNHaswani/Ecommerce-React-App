@@ -18,7 +18,7 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      {/* <WindowDimensionProvider> */}
+      <WindowDimensionProvider>
       <AlertProvider>
         <AuthProvider>
           <UserProvider>
@@ -34,7 +34,7 @@ ReactDOM.render(
           </UserProvider>
         </AuthProvider>
       </AlertProvider>
-      {/* </WindowDimensionProvider> */}
+      </WindowDimensionProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
