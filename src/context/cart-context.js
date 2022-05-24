@@ -11,56 +11,7 @@ const CartProvider = ({ children }) => {
     cartTotal: 0,
     totalDiscount: 0,
     fastDeliveryCharge: 0,
-    items: [
-      {
-        _id: uuid(),
-        title: "Caramalized White Chocolate",
-        price: "500",
-        categories: ["chocolate", "eggless"],
-        subCategories: ["white", "caramalized"],
-        rating: "3",
-        reviewers: "1050",
-        inStock: true,
-        featured: false,
-        media:
-          "https://res.cloudinary.com/harshna/image/upload/v1652722538/ecomm/images/chocolates/caramalized-white-chocolate_agzx3k.jpg",
-        qty: 2,
-        discount: 20,
-        fastDelivery: true,
-      },
-      {
-        _id: uuid(),
-        title: "assorted chocolates 1",
-        price: "1000",
-        categories: ["chocolate", "eggless"],
-        subCategories: ["white", "dark", "milk", "ruby"],
-        rating: "4",
-        reviewers: "725",
-        inStock: true,
-        featured: false,
-        media:
-          "https://res.cloudinary.com/harshna/image/upload/v1652722539/ecomm/images/chocolates/assorted_xjof7a.png",
-        qty: 3,
-        discount: 0,
-        fastDelivery: true,
-      },
-      {
-        _id: uuid(),
-        title: "Dark Chocolate",
-        price: "250",
-        categories: ["chocolate", "eggless"],
-        subCategories: ["dark"],
-        rating: "4.5",
-        reviewers: "725",
-        inStock: false,
-        featured: false,
-        media:
-          "https://res.cloudinary.com/harshna/image/upload/v1652722539/ecomm/images/chocolates/dark-chocolate_smansh.jpg",
-        qty: 1,
-        discount: 0,
-        fastDelivery: false,
-      },
-    ],
+    items: [],
     error: null,
     loading: false,
   };
@@ -158,28 +109,27 @@ const CartProvider = ({ children }) => {
       setError(error);
     }
   };
-  useEffect(() => findCartTotal(), []);
-  // useEffect(() => {
-  //   const token =
-  //     localStorage.getItem("token") ?? sessionStorage.getItem("token") ?? "";
-  //   if (token && token.trim().length > 0) {
-  //     fetch("/api/user/cart", {
-  //       headers: {
-  //         authorization: token,
-  //       },
-  //     })
-  //       .then((response) =>
-  //         response.json().then((data) => {
-  //           response.status === 200
-  //             ? updateCart(data.cart)
-  //             : setError("couldn't load cart data");
-  //         })
-  //       )
-  //       .catch((error) => {
-  //         setError(error);
-  //       });
-  //   }
-  // }, []);
+  useEffect(() => {
+    const token =
+      localStorage.getItem("token") ?? sessionStorage.getItem("token") ?? "";
+    if (token && token.trim().length > 0) {
+      fetch("/api/user/cart", {
+        headers: {
+          authorization: token,
+        },
+      })
+        .then((response) =>
+          response.json().then((data) => {
+            response.status === 200
+              ? updateCart(data.cart)
+              : setError("couldn't load cart data");
+          })
+        )
+        .catch((error) => {
+          setError(error);
+        });
+    }
+  }, []);
   return (
     <CartContext.Provider
       value={{
