@@ -29,9 +29,7 @@ export function Router() {
         {
           path: "product-listing",
           element: (
-            <RequiresAuth>
               <ProductListing />
-            </RequiresAuth>
           ),
         },
         {
