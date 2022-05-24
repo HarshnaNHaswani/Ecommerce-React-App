@@ -1,0 +1,20 @@
+.alert {
+  --color-status-error: #bd0000cc;
+  --color-status-info: #669bebdd;
+  --color-status-success: #30a530dd;
+  /* color: white; */
+  position: fixed;
+  bottom: 0;
+  font-size: 1.5em;
+  right: 0;
+  width: clamp(15rem, 20rem, 24rem);
+  padding: 0.5ch 1ch;
+  font-weight: 500;
+  border-width: 5px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px #0005;
+}
+
+.alert.status-success-outline {
+  border-color: #025502;
+}
