@@ -63,7 +63,7 @@ const CartProvider = ({ children }) => {
         setError(error);
         console.log(error);
         const keys = Object.keys(error);
-        keys.map((key) => console.log(`cart ${key}: ${error[key]}`));
+        keys.map((key) => console.log(`cart ${key}:`, error[key]));
       });
   };
   const addToCart = async (product) => {
@@ -78,7 +78,7 @@ const CartProvider = ({ children }) => {
       setError(error);
       console.log(error);
       const keys = Object.keys(error);
-      keys.map((key) => console.log(`cart ${key}: ${error[key]}`));
+      keys.map((key) => console.log(`cart ${key}:`, error[key]));
     }
   };
   const removeFromCart = async (product) => {
@@ -94,7 +94,7 @@ const CartProvider = ({ children }) => {
       setError(error);
       console.log(error);
       const keys = Object.keys(error);
-      keys.map((key) => console.log(`cart ${key}: ${error[key]}`));
+      keys.map((key) => console.log(`cart ${key}:`, error[key]));
     }
   };
 
@@ -121,7 +121,7 @@ const CartProvider = ({ children }) => {
       setError(error);
       console.log(error);
       const keys = Object.keys(error);
-      keys.map((key) => console.log(`cart ${key}: ${error[key]}`));
+      keys.map((key) => console.log(`cart ${key}:`, error[key]));
     }
   };
   const setCartToInitialState = () => setCart(initialState);
@@ -147,7 +147,7 @@ const CartProvider = ({ children }) => {
           setError(error);
           console.log(error);
           const keys = Object.keys(error);
-          keys.map((key) => console.log(`cart ${key}: ${error[key]}`));
+          keys.map((key) => console.log(`cart ${key}:`, error[key]));
         });
     }
   }, []);
