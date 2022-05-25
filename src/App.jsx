@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     const storedUser = JSON.parse(localStorage.getItem("user")) ?? {};
-    const lengthOfStoredUser = Object.keys(storedUser).length;
+    const lengthOfStoredUser = Object.keys(storedUser)?.length ?? 0;
     if (lengthOfStoredUser > 0 && token.trim().length > 0) {
       showAlert({
         text: `Welcome back ${storedUser.firstName ?? ""}!`,
