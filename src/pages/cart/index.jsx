@@ -78,7 +78,7 @@ export const Cart = () => {
               </div>
               <button
                 className="btn bg-secondary"
-                onClick={(item) => removeFromCart(item)}
+                onClick={(item) => {console.log('remve clicked'); removeFromCart(item)}}
               >
                 Remove from Cart
               </button>

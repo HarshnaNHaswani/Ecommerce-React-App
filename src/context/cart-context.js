@@ -54,18 +54,7 @@ const CartProvider = ({ children }) => {
   useEffect(() => {
     findCartTotal();
   }, [cart.items]);
-  const clearCart = () => {
-    Promise.all([...cart.items].map((item) => removeFromCart(item)))
-      .then(() => {
-        setCart(initialState);
-      })
-      .catch((error) => {
-        setError(error);
-        console.log(error);
-        const keys = Object.keys(error);
-        keys.map((key) => console.log(`cart ${key}:`, error[key]));
-      });
-  };
+
   const addToCart = async (product) => {
     try {
       setLoading();
@@ -83,11 +72,14 @@ const CartProvider = ({ children }) => {
   };
   const removeFromCart = async (product) => {
     try {
+      console.log("in removeFromCart");
       const response = await removeItem({
         source: "cart",
         productId: product["_id"],
       });
+      console.log(response);
       if (response.status === 200) {
+        console.log("inside if");
         updateCart(response.data.cart);
       } else setError("cart: Couldn't remove item");
     } catch (error) {
@@ -96,6 +88,18 @@ const CartProvider = ({ children }) => {
       const keys = Object.keys(error);
       keys.map((key) => console.log(`cart ${key}:`, error[key]));
     }
+  };
+  const clearCart = () => {
+    Promise.all([...cart.items].map((item) => removeFromCart(item)))
+      .then(() => {
+        setCart(initialState);
+      })
+      .catch((error) => {
+        setError(error);
+        console.log(error);
+        const keys = Object.keys(error);
+        keys.map((key) => console.log(`cart ${key}:`, error[key]));
+      });
   };
 
   const updateQuantity = async ({ type, product }) => {
