@@ -70,6 +70,7 @@ const CartProvider = ({ children }) => {
     try {
       setLoading();
       const response = await addItem({ source: "cart", product });
+      console.log(response);
       if (response.status === 201) {
         updateCart(response.data.cart);
       } else setError("cart: couldn't add item");
@@ -112,6 +113,7 @@ const CartProvider = ({ children }) => {
         updateType: type,
         productId: product["_id"],
       });
+      console.log(response);
       if (response.status === 200) {
         updateCart(response.data.cart);
       } else setError("cart: couldn't update item");
@@ -135,6 +137,7 @@ const CartProvider = ({ children }) => {
       })
         .then((response) =>
           response.json().then((data) => {
+            console.log(response);
             response.status === 200
               ? updateCart(data.cart)
               : setError("couldn't load cart data");
