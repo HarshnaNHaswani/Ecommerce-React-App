@@ -27,14 +27,14 @@ export const ProductListing = () => {
   const { items: cart, error: cartError } = cartState;
   const { items: wishlist, error: wishlistError } = wishlistState;
 
-  const cartErrorKeys = Object.keys(cartError);
-  const wishlistErrorKeys = Object.keys(wishlistError);
-  console.log("cartError", cartError);
-  cartErrorKeys.map((key) => console.log(`${key}: `, cartError[key]));
+  // const cartErrorKeys = Object.keys(cartError);
+  // const wishlistErrorKeys = Object.keys(wishlistError);
+  // console.log("cartError", cartError);
+  // cartErrorKeys.map((key) => console.log(`${key}: `, cartError[key]));
 
-  console.log("wishlistError", wishlistError);
-  wishlistErrorKeys.map((key) => console.log(`${key}: `, wishlistError[key]));
-  
+  // console.log("wishlistError", wishlistError);
+  // wishlistErrorKeys.map((key) => console.log(`${key}: `, wishlistError[key]));
+
   const { productsListingState } = useProductListing();
   const {
     products,

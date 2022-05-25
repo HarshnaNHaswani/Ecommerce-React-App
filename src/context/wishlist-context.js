@@ -35,9 +35,9 @@ const WishlistProvider = ({ children }) => {
       } else setError("wishlist: couldn't add item");
     } catch (error) {
       setError(error);
-      console.log(error)
+      console.log(error);
       const keys = Object.keys(error);
-      keys.map(key => console.log(`wishlist ${key}: ${error[key]}`,))
+      keys.map((key) => console.log(`wishlist ${key}: ${error[key]}`));
     }
   };
   const removeFromWishlist = async (product) => {
@@ -51,16 +51,16 @@ const WishlistProvider = ({ children }) => {
       } else setError("wishlist: Couldn't remove item");
     } catch (error) {
       setError(error);
-      console.log(error)
+      console.log(error);
       const keys = Object.keys(error);
-      keys.map(key => console.log(`wishlist ${key}: ${error[key]}`,))
+      keys.map((key) => console.log(`wishlist ${key}: ${error[key]}`));
     }
   };
-  const {addToCart} = useCart()
+  const { addToCart } = useCart();
   const moveToCart = (product) => {
-    addToCart(product)
-    removeFromWishlist(product)
-  }
+    addToCart(product);
+    removeFromWishlist(product);
+  };
   const clearWishlist = () => {
     Promise.all([...wishlist.items].map((item) => removeFromWishlist(item)))
       .then(() => {
@@ -68,12 +68,12 @@ const WishlistProvider = ({ children }) => {
       })
       .catch((error) => {
         setError(error);
-        console.log(error)
+        console.log(error);
         const keys = Object.keys(error);
-        keys.map(key => console.log(`wishlist ${key}: ${error[key]}`,))
+        keys.map((key) => console.log(`wishlist ${key}: ${error[key]}`));
       });
   };
-  const setWishlistToInitialState = () => setWishlist(initialState)
+  const setWishlistToInitialState = () => setWishlist(initialState);
 
   useEffect(() => {
     const token =
@@ -87,18 +87,20 @@ const WishlistProvider = ({ children }) => {
       })
         .then((response) =>
           response.json().then((data) => {
-            if(response.status === 200)
-               updateWishlist(data.wishlist)
-              else {setError("couldn't load wishlist data"); console.log(error)
-            const keys = Object.keys(error);
-          keys.map(key => console.log(`wishlist ${key}: ${error[key]}`,))}
+            if (response.status === 200) updateWishlist(data.wishlist);
+            else {
+              setError("couldn't load wishlist data");
+              console.log(error);
+              const keys = Object.keys(error);
+              keys.map((key) => console.log(`wishlist ${key}: ${error[key]}`));
+            }
           })
         )
         .catch((error) => {
           setError(error);
-          console.log(error)
+          console.log(error);
           const keys = Object.keys(error);
-          keys.map(key => console.log(`wishlist ${key}: ${error[key]}`,))
+          keys.map((key) => console.log(`wishlist ${key}: ${error[key]}`));
         });
     }
   }, []);
@@ -110,7 +112,7 @@ const WishlistProvider = ({ children }) => {
         removeFromWishlist,
         clearWishlist,
         moveToCart,
-        setWishlistToInitialState
+        setWishlistToInitialState,
       }}
     >
       {children}
