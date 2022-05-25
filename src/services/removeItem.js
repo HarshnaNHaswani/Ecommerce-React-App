@@ -1,8 +1,6 @@
 import axios from "axios";
-const encodedToken =
-  localStorage.getItem("token") ?? sessionStorage.getItem("token") ?? "";
 
-export const removeItem = async ({ source, productId }) =>
+export const removeItem = async ({ source, productId, token: encodedToken }) =>
   await axios.delete(`/api/user/${source}/${productId}`, {
     headers: {
       authorization: encodedToken,

@@ -18,7 +18,7 @@ export const Login = () => {
   const [loadState, setLoadState] = useState(false);
   const [error, setError] = useState(null);
   const location = useLocation();
-  const { isLoggedIn, setIsLoggedIn } = useAuth();
+  const { setToken, setIsLoggedIn } = useAuth();
   const navigate = useNavigate();
   const loginHandler = async (event) => {
     event.preventDefault();
@@ -36,6 +36,7 @@ export const Login = () => {
         updateAllUserDetails({ ...response.data.foundUser, address: [] });
         if (loginData.rememberMe) {
           localStorage.setItem("token", response.data.encodedToken);
+          setToken(response.data.encodedToken);
           localStorage.setItem(
             "user",
             JSON.stringify({

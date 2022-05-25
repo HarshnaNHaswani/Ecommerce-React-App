@@ -1,8 +1,6 @@
 import axios from "axios";
-const encodedToken =
-  localStorage.getItem("token") ?? sessionStorage.getItem("token") ?? "";
 
-export const updateCartItem = async ({ updateType, productId }) =>
+export const updateCartItem = async ({ updateType, productId, token: encodedToken }) =>
   await axios.post(
     `/api/user/cart/${productId}`,
     { action: { type: updateType } },

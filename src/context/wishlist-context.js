@@ -2,6 +2,8 @@ import { createContext, useContext, useState, useEffect } from "react";
 import { useCart } from "./cart-context";
 import { addItem } from "../services/addItem";
 import { removeItem } from "../services/removeItem";
+import { useAuth } from "./auth-context";
+
 const WishlistContext = createContext();
 const initialState = {
   items: [],
@@ -11,6 +13,8 @@ const initialState = {
 };
 const WishlistProvider = ({ children }) => {
   const [wishlist, setWishlist] = useState(initialState);
+  const {token} = useAuth()
+
   const setLoading = () =>
     setWishlist((prev) => ({ ...prev, error: "", loading: true }));
   const setError = (error) => {
@@ -29,7 +33,7 @@ const WishlistProvider = ({ children }) => {
   const addToWishlist = async (product) => {
     try {
       setLoading();
-      const response = await addItem({ source: "wishlist", product });
+      const response = await addItem({ source: "wishlist", product, token });
       if (response.status === 201) {
         updateWishlist(response.data.wishlist);
       } else setError("wishlist: couldn't add item");
@@ -45,6 +49,7 @@ const WishlistProvider = ({ children }) => {
       const response = await removeItem({
         source: "wishlist",
         productId: product["_id"],
+        token
       });
       if (response.status === 200) {
         updateWishlist(response.data.wishlist);

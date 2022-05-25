@@ -2,6 +2,8 @@ import { createContext, useContext, useState, useEffect } from "react";
 import { addItem } from "../services/addItem";
 import { removeItem } from "../services/removeItem";
 import { updateCartItem } from "../services/updateCartItem";
+import { useAuth } from "./auth-context";
+
 const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
@@ -15,6 +17,7 @@ const CartProvider = ({ children }) => {
     loading: false,
   };
   const [cart, setCart] = useState(initialState);
+  const { token } = useAuth();
   const findCartTotal = () => {
     const { total, quantity, discount, fastDeliveryCharge } = [
       ...cart.items,
@@ -58,7 +61,7 @@ const CartProvider = ({ children }) => {
   const addToCart = async (product) => {
     try {
       setLoading();
-      const response = await addItem({ source: "cart", product });
+      const response = await addItem({ source: "cart", product, token });
       console.log(response);
       if (response.status === 201) {
         updateCart(response.data.cart);
@@ -73,9 +76,11 @@ const CartProvider = ({ children }) => {
   const removeFromCart = async (product) => {
     try {
       console.log("in removeFromCart");
+      console.log(product, product._id, product["_id"]);
       const response = await removeItem({
         source: "cart",
         productId: product["_id"],
+        token,
       });
       console.log(response);
       if (response.status === 200) {
@@ -116,6 +121,7 @@ const CartProvider = ({ children }) => {
       const response = await updateCartItem({
         updateType: type,
         productId: product["_id"],
+        token,
       });
       console.log(response);
       if (response.status === 200) {
@@ -131,8 +137,6 @@ const CartProvider = ({ children }) => {
   const setCartToInitialState = () => setCart(initialState);
 
   useEffect(() => {
-    const token =
-      localStorage.getItem("token") ?? sessionStorage.getItem("token") ?? "";
     if (token && token.trim().length > 0) {
       fetch("/api/user/cart", {
         headers: {
