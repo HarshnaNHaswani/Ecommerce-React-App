@@ -51,7 +51,9 @@ export const Login = () => {
         location?.state?.from?.pathname
           ? navigate(location.state.from.pathname, { replace: true })
           : navigate("/");
-      } else{ console.log(error); setError("An Error Occurred! Try again later");}
+      } else {
+        setError("An Error Occurred! Try again later");
+      }
     } catch (error) {
       setLoadState(false);
       switch (error?.response?.status ?? 0) {
@@ -67,9 +69,6 @@ export const Login = () => {
         }
         default:
           setError("An Error Occured! Please try again later");
-          console.log(error);
-          const keys = Object.keys(error)
-          keys.map(key => console.log(`${key}: `, error[key]))
           setLoginData(initialData);
       }
     }

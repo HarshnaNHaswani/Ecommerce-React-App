@@ -13,7 +13,7 @@ const initialState = {
 };
 const WishlistProvider = ({ children }) => {
   const [wishlist, setWishlist] = useState(initialState);
-  const {token} = useAuth()
+  const { token } = useAuth();
 
   const setLoading = () =>
     setWishlist((prev) => ({ ...prev, error: "", loading: true }));
@@ -39,9 +39,6 @@ const WishlistProvider = ({ children }) => {
       } else setError("wishlist: couldn't add item");
     } catch (error) {
       setError(error);
-      console.log(error);
-      const keys = Object.keys(error);
-      keys.map((key) => console.log(`wishlist ${key}:`, error[key]));
     }
   };
   const removeFromWishlist = async (product) => {
@@ -49,16 +46,13 @@ const WishlistProvider = ({ children }) => {
       const response = await removeItem({
         source: "wishlist",
         productId: product["_id"],
-        token
+        token,
       });
       if (response.status === 200) {
         updateWishlist(response.data.wishlist);
       } else setError("wishlist: Couldn't remove item");
     } catch (error) {
       setError(error);
-      console.log(error);
-      const keys = Object.keys(error);
-      keys.map((key) => console.log(`wishlist ${key}:`, error[key]));
     }
   };
   const { addToCart } = useCart();
@@ -73,9 +67,6 @@ const WishlistProvider = ({ children }) => {
       })
       .catch((error) => {
         setError(error);
-        console.log(error);
-        const keys = Object.keys(error);
-        keys.map((key) => console.log(`wishlist ${key}:`, error[key]));
       });
   };
   const setWishlistToInitialState = () => setWishlist(initialState);
@@ -95,17 +86,11 @@ const WishlistProvider = ({ children }) => {
             if (response.status === 200) updateWishlist(data.wishlist);
             else {
               setError("couldn't load wishlist data");
-              console.log(error);
-              const keys = Object.keys(error);
-              keys.map((key) => console.log(`wishlist ${key}:`, error[key]));
             }
           })
         )
         .catch((error) => {
           setError(error);
-          console.log(error);
-          const keys = Object.keys(error);
-          keys.map((key) => console.log(`wishlist ${key}:`, error[key]));
         });
     }
   }, []);

@@ -62,36 +62,25 @@ const CartProvider = ({ children }) => {
     try {
       setLoading();
       const response = await addItem({ source: "cart", product, token });
-      console.log(response);
       if (response.status === 201) {
         updateCart(response.data.cart);
       } else setError("cart: couldn't add item");
     } catch (error) {
       setError(error);
-      console.log(error);
-      const keys = Object.keys(error);
-      keys.map((key) => console.log(`cart ${key}:`, error[key]));
     }
   };
   const removeFromCart = async (product) => {
     try {
-      console.log("in removeFromCart");
-      console.log(product, product._id, product["_id"]);
       const response = await removeItem({
         source: "cart",
         productId: product["_id"],
         token,
       });
-      console.log(response);
       if (response.status === 200) {
-        console.log("inside if");
         updateCart(response.data.cart);
       } else setError("cart: Couldn't remove item");
     } catch (error) {
       setError(error);
-      console.log(error);
-      const keys = Object.keys(error);
-      keys.map((key) => console.log(`cart ${key}:`, error[key]));
     }
   };
   const clearCart = () => {
@@ -101,9 +90,6 @@ const CartProvider = ({ children }) => {
       })
       .catch((error) => {
         setError(error);
-        console.log(error);
-        const keys = Object.keys(error);
-        keys.map((key) => console.log(`cart ${key}:`, error[key]));
       });
   };
 
@@ -123,15 +109,11 @@ const CartProvider = ({ children }) => {
         productId: product["_id"],
         token,
       });
-      console.log(response);
       if (response.status === 200) {
         updateCart(response.data.cart);
       } else setError("cart: couldn't update item");
     } catch (error) {
       setError(error);
-      console.log(error);
-      const keys = Object.keys(error);
-      keys.map((key) => console.log(`cart ${key}:`, error[key]));
     }
   };
   const setCartToInitialState = () => setCart(initialState);
@@ -145,17 +127,13 @@ const CartProvider = ({ children }) => {
       })
         .then((response) =>
           response.json().then((data) => {
-            console.log(response);
-            response.status === 200
+                  response.status === 200
               ? updateCart(data.cart)
               : setError("couldn't load cart data");
           })
         )
         .catch((error) => {
           setError(error);
-          console.log(error);
-          const keys = Object.keys(error);
-          keys.map((key) => console.log(`cart ${key}:`, error[key]));
         });
     }
   }, []);

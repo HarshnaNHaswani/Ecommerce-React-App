@@ -8,10 +8,10 @@ function App() {
   const { showAlert } = useAlert();
   const { setIsLoggedIn } = useAuth();
   useEffect(() => {
-    const token = localStorage.getItem("token") ?? '';
+    const token = localStorage.getItem("token") ?? "";
     const storedUser = JSON.parse(localStorage.getItem("user")) ?? {};
     const lengthOfStoredUser = Object.keys(storedUser)?.length ?? 0;
-    if (lengthOfStoredUser > 0 && token.length > 0 ) {
+    if (lengthOfStoredUser > 0 && token.length > 0) {
       showAlert({
         text: `Welcome back ${storedUser.firstName ?? ""}!`,
         status: "success",
