@@ -67,6 +67,8 @@ export const Login = () => {
         default:
           setError("An Error Occured! Please try again later");
           console.log(error);
+          const keys = Object.keys(error)
+          keys.map(key => console.log(`${key}: `, error[key]))
           setLoginData(initialData);
       }
     }
