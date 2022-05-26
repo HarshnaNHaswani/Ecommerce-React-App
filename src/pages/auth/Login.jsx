@@ -76,6 +76,8 @@ export const Login = () => {
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
+      setToken(localStorage.getItem("token"));
+      setIsLoggedIn(true);
       navigate("/");
     }
   }, []);
