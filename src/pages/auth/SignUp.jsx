@@ -17,7 +17,7 @@ export const SignUp = () => {
   };
   const navigate = useNavigate();
   const location = useLocation();
-  const { setIsLoggedIn } = useAuth();
+  const { setIsLoggedIn, setToken } = useAuth();
   const [signUpData, setSignUpData] = useState(initialState);
   const [loadState, setLoadState] = useState(false);
   const [error, setError] = useState(null);
@@ -111,6 +111,7 @@ export const SignUp = () => {
         });
         updateAllUserDetails(response.data.createdUser);
         sessionStorage.setItem("token", response.data.encodedToken);
+        setToken(response.data.encodedToken);
         location?.state?.from?.pathname
           ? navigate(location.state.from.pathname, { replace: true })
           : navigate("/");

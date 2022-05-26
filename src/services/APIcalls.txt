@@ -1,0 +1,212 @@
+// const navigate = useNavigate()
+
+// // returs data object - user, encodedToken
+// const signupHandler = async () => {
+//   try {
+//     const response = await axios.post(`/api/auth/signup`, {
+//       firstName: firstName,
+//       lastName: lastName,
+//       email: email,
+//       password: password,
+//     });
+//     if (response.status === 200) {
+//       alert(success)
+//      navigate('login') 
+//      // or --------------------
+//      navigate(previousLocation)
+//      localStorage.setItem("token", response.data.encodedToken);
+
+//     } else alert(error)
+//     // saving the encodedToken in the localStorage
+//   } catch (error) {
+//     console.log(error);
+//     alert(error)
+//   }
+// };
+// const loginHandler = async () => {
+//   try {
+//     const response = await axios.post(`/api/auth/login`, {
+//       email: email,
+//       password: password,
+//     });
+//     if (response.status === 200) {
+//      navigate(previousLocation)
+//      localStorage.setItem("token", response.data.encodedToken);
+
+//     } else alert(error)
+//     // saving the encodedToken in the localStorage
+//   } catch (error) {
+//     console.log(error);
+//     alert(error)
+//   }
+// };
+
+// // returns data object - Array
+// import React, { useState } from "react";
+// import { Navigate, useNavigate } from "react-router-dom";
+// const encodedToken = localStorage.getItem("token");
+// const [cart, setCart] = useState([]);
+// const fetchCartDetails = async () => {
+//   try {
+//     const response = await axios.get(`/api/user/cart`, {
+//       headers: {
+//         authorization: encodedToken, // passing token as an authorization header
+//       },
+//     });
+//     setCart(response.data.cart);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// import React, { useState } from "react";
+// import { Navigate, useNavigate } from "react-router-dom";
+// const encodedToken2 = localStorage.getItem("token");
+// // const [cart, setCart] = useState([]);
+// const AddtoCart = async () => {
+//   try {
+//     const response = await axios.post(`/api/user/cart`, 
+//       {...product},
+//       {headers: {
+//         authorization: encodedToken2, // passing token as an authorization header
+//       }},
+      
+//     );
+//     setCart(response.data.cart);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+// const RemoveFromCart = async () => {
+//   try {
+//     const response = await axios.delete(`/api/user/cart/:productId`, 
+//       {headers: {
+//         authorization: encodedToken2, // passing token as an authorization header
+//       }},
+      
+//     );
+//     setCart(response.data.cart);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+// const updateCartItemQuantity = async () => {
+//   try {
+//     const response = await axios.post(`/api/user/cart/:productId`, 
+//       {headers: {
+//         authorization: encodedToken2, // passing token as an authorization header
+//       }},{
+//         action: {
+//           type: "increment | decrement"
+//         }
+//       }
+      
+//     );
+//     setCart(response.data.cart);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// const [wishlist, setWishlist] = useState([]);
+// const fetchWishlistDetails = async () => {
+//   try {
+//     const response = await axios.get(`/api/user/wishlist`, {
+//       headers: {
+//         authorization: encodedToken, // passing token as an authorization header
+//       },
+//     });
+//     setWishlist(response.data.wishlist);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// const AddtoWishlist = async () => {
+//   try {
+//     const response = await axios.post(`/api/user/wishlist`, 
+//       {...product},
+//       {headers: {
+//         authorization: encodedToken2, // passing token as an authorization header
+//       }},
+      
+//     );
+//     setWishlist(response.data.wishlist);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+// const RemoveFromWishlist = async () => {
+//   try {
+//     const response = await axios.delete(`/api/user/wishlist/:productId`, 
+//       {headers: {
+//         authorization: encodedToken2, // passing token as an authorization header
+//       }},
+      
+//     );
+//     setWishlist(response.data.wishlist);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// const getProducts = async () => {
+//   try {
+//     const response = await axios.get("/api/products");
+//     if (response.status === 200) {
+//       productsListingsDispatch({
+//         type: "SET_INITIAL_DATA",
+//         payload: response.data.products,
+//       });
+//     } else {
+//       productsListingsDispatch({ type: "SET_SERVER_ERROR" });
+//     }
+//   } catch (err) {
+//     console.log(err);
+//     productsListingsDispatch({ type: "SET_SERVER_ERROR" });
+//   }
+// }
+
+// const getCategories = async () => {
+//   try {
+//     const response = await axios.get("/api/categories");
+//     if (response.status === 200) {
+//       categoryDispatch({type:'SET_INITIAL_CATEGORIES', payload: response.data.categories})
+//     } else {
+//       categoryDispatch({type:'SET_ERROR', payload: 'unable to fetch data, please try again later'})
+//     }
+//   } catch (err) {
+//     categoryDispatch({type:'SET_ERROR', payload: 'An error Occured'})
+//     console.log(err);
+//   }
+// }
+
+// // returns data object- object
+// const getThisProduct = async () => {
+//   try {
+//     showLoading()
+//     const response = await axios.get("/api/products/:productId");
+//     if (response.status === 200) {
+//       setDisplayProduct(response.data.product)
+//     } else {
+//       showError()
+//     }
+//   } catch (err) {
+//     console.log(err);
+//     showError();
+//   }
+// }
+// const getThisCategory = async () => {
+//   try {
+//     showLoading()
+//     const response = await axios.get("/api/products/:categoryId");
+//     if (response.status === 200) {
+//       setDisplayCategory(response.data.category)
+//     } else {
+//       showError()
+//     }
+//   } catch (err) {
+//     console.log(err);
+//     showError();
+//   }
+// }

@@ -6,12 +6,12 @@ import { Router } from "./router/Router";
 import { useAuth } from "./context/auth-context";
 function App() {
   const { showAlert } = useAlert();
-  const { setIsLoggedIn } = useAuth();
+
   useEffect(() => {
-    const token = localStorage.getItem("token") ?? '';
+    const token = localStorage.getItem("token") ?? "";
     const storedUser = JSON.parse(localStorage.getItem("user")) ?? {};
     const lengthOfStoredUser = Object.keys(storedUser)?.length ?? 0;
-    if (lengthOfStoredUser > 0 && token.length > 0 ) {
+    if (lengthOfStoredUser > 0 && token.length > 0) {
       showAlert({
         text: `Welcome back ${storedUser.firstName ?? ""}!`,
         status: "success",
@@ -20,10 +20,9 @@ function App() {
     }
     if (lengthOfStoredUser || token?.length > 0) {
       showAlert({
-        text: "error retrieving user data, Please login",
+        text: "error retrieving user data, Please login again",
         status: "error",
       });
-      setIsLoggedIn(false);
     }
   }, []);
 

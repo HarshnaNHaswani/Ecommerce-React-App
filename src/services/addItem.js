@@ -1,8 +1,7 @@
 import axios from "axios";
-const encodedToken =
-  localStorage.getItem("token") ?? sessionStorage.getItem("token") ?? "";
 
-export const addItem = async ({ source, product }) =>
+
+export const addItem = async ({ source, product, token: encodedToken }) =>
   await axios.post(
     `/api/user/${source}`,
     { product },

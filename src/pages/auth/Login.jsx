@@ -18,7 +18,7 @@ export const Login = () => {
   const [loadState, setLoadState] = useState(false);
   const [error, setError] = useState(null);
   const location = useLocation();
-  const { isLoggedIn, setIsLoggedIn } = useAuth();
+  const { setToken, setIsLoggedIn } = useAuth();
   const navigate = useNavigate();
   const loginHandler = async (event) => {
     event.preventDefault();
@@ -36,6 +36,7 @@ export const Login = () => {
         updateAllUserDetails({ ...response.data.foundUser, address: [] });
         if (loginData.rememberMe) {
           localStorage.setItem("token", response.data.encodedToken);
+          setToken(response.data.encodedToken);
           localStorage.setItem(
             "user",
             JSON.stringify({
@@ -50,7 +51,9 @@ export const Login = () => {
         location?.state?.from?.pathname
           ? navigate(location.state.from.pathname, { replace: true })
           : navigate("/");
-      } else setError("An Error Occurred! Try again later");
+      } else {
+        setError("An Error Occurred! Try again later");
+      }
     } catch (error) {
       setLoadState(false);
       switch (error?.response?.status ?? 0) {
@@ -73,6 +76,8 @@ export const Login = () => {
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
+      setToken(localStorage.getItem("token"));
+      setIsLoggedIn(true);
       navigate("/");
     }
   }, []);
