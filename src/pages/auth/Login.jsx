@@ -13,6 +13,10 @@ export const Login = () => {
     password: "",
     rememberMe: true,
   };
+  const testData = {
+    email: "test@gmail.com",
+    password: "12345",
+  };
   const { updateAllUserDetails } = useUser();
   const [loginData, setLoginData] = useState(initialData);
   const [loadState, setLoadState] = useState(false);
@@ -20,15 +24,18 @@ export const Login = () => {
   const location = useLocation();
   const { isLoggedIn, setIsLoggedIn } = useAuth();
   const navigate = useNavigate();
-  const loginHandler = async (event) => {
+  const loginHandler = async (event, { test }) => {
     event.preventDefault();
     try {
       setLoadState(true);
       setError(null);
-      const response = await axios.post("/api/auth/login", {
-        email: loginData.email,
-        password: loginData.password,
-      });
+      const requestData = test
+        ? testData
+        : {
+            email: loginData.email,
+            password: loginData.password,
+          };
+      const response = await axios.post("/api/auth/login", requestData);
       if (response.status === 200) {
         setLoadState(false);
         setError(null);
@@ -72,7 +79,9 @@ export const Login = () => {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("token")) {
+    if (localStorage.getItem("token")?.length > 0) {
+      setToken(localStorage.getItem("token"));
+      setIsLoggedIn(true);
       navigate("/");
     }
   }, []);
@@ -153,8 +162,22 @@ export const Login = () => {
         <Link to="/forgot-password" className="form-item">
           Forgot your password?
         </Link>
-        <button type="submit" className="btn bg-accent" onClick={loginHandler}>
+        <button
+          type="submit"
+          className="btn bg-accent"
+          onClick={(event) => loginHandler(event, { test: false })}
+        >
           login
+        </button>
+        <button
+          type="submit"
+          className="btn outline-accent"
+          onClick={(event) => {
+            setLoginData((prev) => ({ ...prev, ...testData }));
+            loginHandler(event, { test: true });
+          }}
+        >
+          login with test credentials
         </button>
         <Link to="/signup" className="form-item">
           Create an account &gt;
