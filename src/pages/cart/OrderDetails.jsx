@@ -1,10 +1,13 @@
 import React from "react";
+import { useState } from "react";
 import { useCart } from "../../context/cart-context";
 import "./cart.css";
 export const OrderDetails = () => {
   const { cart } = useCart();
   const { totalQuantity, cartTotal, totalDiscount, fastDeliveryCharge } = cart;
   let grandTotal;
+  const [getFastDelivery, setGetFastDelivery] = useState(false);
+  const toggleGetFastDelivery = () => setGetFastDelivery((prev) => !prev);
   fastDeliveryCharge > 0
     ? (grandTotal = cartTotal - totalDiscount + fastDeliveryCharge)
     : (grandTotal = cartTotal - totalDiscount + 20);
@@ -26,11 +29,18 @@ export const OrderDetails = () => {
           </tr>
           <tr className="delivery">
             <th>Delivery Charges</th>
-            <td className="number">+ ₹ {fastDeliveryCharge <= 0 ? 20 : 0}</td>
+            <td className="number">
+              + ₹ {!getFastDelivery || fastDeliveryCharge <= 0 ? 20 : 0}
+            </td>
           </tr>
           <tr className="delivery">
             <th>Fast Delivery Charges</th>
-            <td className="number">+ ₹ {fastDeliveryCharge > 0 ? fastDeliveryCharge : 0}</td>
+            <td className="number">
+              + ₹{" "}
+              {getFastDelivery && fastDeliveryCharge > 0
+                ? fastDeliveryCharge
+                : 0}
+            </td>
           </tr>
           <tr className="total bg-secondary">
             <th>Total</th>
@@ -38,11 +48,22 @@ export const OrderDetails = () => {
               <strong> ₹ {grandTotal}</strong>
             </td>
           </tr>
-          <tr>
-          </tr>
+          <tr></tr>
         </tbody>
       </table>
-      <p>You saved <span className="bg-secondary number">{" "} ₹ {totalDiscount} </span> on this order</p>
+      <p>
+        You saved{" "}
+        <span className="bg-secondary number"> ₹ {totalDiscount} </span> on this
+        order
+      </p>
+      <input
+        type="checkbox"
+        name="get-fast-delivery"
+        id="get-fast-delivery"
+        checked={getFastDelivery}
+        onChange={toggleGetFastDelivery}
+      />
+      <label htmlFor="get-fast-delivery">Get Fast Delivery</label>
       <button className="btn bg-accent">Place Order!</button>
     </div>
   );

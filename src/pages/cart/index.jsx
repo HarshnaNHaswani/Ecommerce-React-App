@@ -38,7 +38,7 @@ export const Cart = () => {
       {error && showAlert({ text: "An Error Occurred", status: "error" })}
       {loading && <img src={Loading} alt="loading..." />}
       <h2 className="heading gutter-y-xl">Your Cart</h2>
-      <button onClick={clearCart} className="clear-cart outline-secondary">
+      <button onClick={clearCart} className="btn btn-clear outline-secondary position-right">
         Clear Cart
       </button>
       <div className="cart grid-container">
