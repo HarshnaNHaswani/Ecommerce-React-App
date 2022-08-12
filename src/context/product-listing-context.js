@@ -18,6 +18,7 @@ const initialState = {
   hasRating: 0,
   hasCategories: [],
   hasSubCategories: [],
+  searchData: [],
   minPrice: 50,
   sortByPrice: null,
   lowestPrice: 0,
@@ -65,9 +66,12 @@ const ProductsListingProvider = ({ children }) => {
     productsListingsDispatch({ type: "RESET" });
   };
 
+  const setSearchData = (val) => {
+    productsListingsDispatch({ type: "SET_SEARCH_DATA", payload: val });
+
+  }
   const setProductsError = (val) =>
     productsListingReducer({ type: "SET_CLIENT_ERROR", payload: val });
-
   useEffect(() => {
     updateCategoryFilter();
   }, [categoryState.categoryState]);
@@ -101,6 +105,7 @@ const ProductsListingProvider = ({ children }) => {
         setMinPrice,
         setProductsError,
         setRating,
+        setSearchData,
         toggleInStockFilter,
         resetSortAndFilters,
         sortProductsByPrice,
@@ -118,3 +123,4 @@ const ProductsListingProvider = ({ children }) => {
 const useProductListing = () => useContext(ProductsListingContext);
 
 export { ProductsListingProvider, useProductListing };
+// write func to reset error
