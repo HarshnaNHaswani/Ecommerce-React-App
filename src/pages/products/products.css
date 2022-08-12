@@ -1,6 +1,6 @@
-
 .product-listing {
   display: block;
+  margin: 2vh 2vw;
 }
 
 .product-listing > * {
@@ -20,13 +20,11 @@
 .product-listing > .products > .card-horizontal {
   align-self: flex-start;
 }
-.product-listing {
-  margin: 2vh 2vw;
-}
+
 .filter .form,
 .product-listing .form {
   box-shadow: 0 0 3px var(--color-shadow);
-  height: 60vh;
+  height: 70vh;
   overflow-y: scroll;
   flex-flow: row wrap;
   width: 30rem;
@@ -43,15 +41,27 @@
 }
 
 .filter-type-toggle,
-.filter-type-toggle * {
+.filter-type-toggle *,
+.filter,
+.filter * {
   margin-left: auto;
   text-align: right;
+  line-height: 1.25em;
 }
 .products .rating-wrapper {
   margin: 1ch 0 3ch 8ch;
 }
-.products .card-container{
+.products .card-container {
   position: relative;
+}
+.product-listing > .filter .list {
+  margin: 1ch 0;
+}
+.product-listing > .filter .form-item .list-item {
+  font-size: 1.1em;
+}
+.form-item label.strong {
+  font-weight: 900;
 }
 @media screen and (min-width: 60em) {
   html {
@@ -68,8 +78,18 @@
   }
   .product-listing > .filter {
     grid-area: "filters";
+    position: sticky;
+    height: 70vh;
+    top: 5%;
+    transform: translate(0, 5%);
   }
-  
+
+  .product-listing > .filter .form-item .list-item {
+    font-weight: 300;
+  }
+  .product-listing > .filter .list-item > .list-item {
+    place-items: initial;
+  }
   .product-listing > .products {
     grid-area: "products";
   }

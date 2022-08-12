@@ -7,7 +7,7 @@ export const AuthLayout = () => {
   return (
     <div>
       <AuthNav />
-      <main className={`auth ${windowDimension.windowWidth > 560 ? "center-xy" : 'width-sm center-xy'}`}>
+      <main className={`${windowDimension.windowWidth > 560 ? "center-xy" : 'width-sm center-xy'}`}>
         <Outlet />
       </main>
       <Footer />

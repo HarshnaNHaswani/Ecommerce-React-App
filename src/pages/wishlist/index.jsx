@@ -40,7 +40,7 @@ export const Wishlist = () => {
       {error && showAlert({text:"An Error Occurred", status: "error"})}
       {loading && <img src={Loading} alt="loading..."/>}
       <h2 className="heading gutter-y-xl">Your Wishlist</h2>
-      <button onClick={clearWishlist} className="clear-cart outline-secondary">
+      <button onClick={clearWishlist} className="btn btn-clear outline-secondary position-right">
         Clear Wishlist
       </button>
       <div className="wishlist grid-fit">

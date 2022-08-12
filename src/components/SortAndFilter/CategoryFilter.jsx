@@ -33,12 +33,13 @@ export function CategoryFilter() {
           Reset Categories
         </button>
         <legend>Category</legend>
-        {allCategories &&
+        {allCategories.length > 0 &&
           allCategories.map((category) => {
             const { categoryName, _id: id, subCategories } = category;
             const slugifiedName = slugify(categoryName);
             return (
-              <section key={id}>
+              <ul key={id}>
+                <li >
                 <input
                   type="checkbox"
                   id={slugifiedName}
@@ -46,25 +47,31 @@ export function CategoryFilter() {
                   checked={categoryState[id].checked}
                   onChange={() => toggleCategoryState(id)}
                 />
-                <label htmlFor={slugifiedName}>{categoryName}</label>
-                {subCategories &&
-                  subCategories.map((sub) => {
-                    const { _id: subId, categoryName: subName } = sub;
-                    const slugifiedSubName = slugify(subName);
-                    return (
-                      <p key={subId}>
-                        <input
-                          type="checkbox"
-                          id={slugifiedSubName}
-                          value={subCategoryState[subId].name}
-                          checked={subCategoryState[subId].checked}
-                          onChange={() => toggleSubCategoryState(subId)}
-                        />
-                        <label htmlFor={slugifiedSubName}>{subName}</label>
-                      </p>
-                    );
-                  })}
-              </section>
+                <label htmlFor={slugifiedName} className="strong">
+                  {categoryName}
+                </label>
+                {subCategories.length > 0 && (
+                  <ul className="list">
+                    {subCategories.map((sub) => {
+                      const { _id: subId, categoryName: subName } = sub;
+                      const slugifiedSubName = slugify(subName);
+                      return (
+                        <li key={subId} className="list-item">
+                          <input
+                            type="checkbox"
+                            id={slugifiedSubName}
+                            value={subCategoryState[subId].name}
+                            checked={subCategoryState[subId].checked}
+                            onChange={() => toggleSubCategoryState(subId)}
+                          />
+                          <label htmlFor={slugifiedSubName}>{subName}</label>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+                </li>
+              </ul>
             );
           })}
       </fieldset>
