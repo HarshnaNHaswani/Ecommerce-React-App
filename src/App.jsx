@@ -4,6 +4,7 @@ import { Alert } from "./components/Alert/alert";
 import { useAlert } from "./context/alert-context";
 import { Router } from "./router/Router";
 import { useAuth } from "./context/auth-context";
+import { useTheme } from "./context/theme-context";
 function App() {
   const { showAlert } = useAlert();
   const { setIsLoggedIn } = useAuth();
@@ -26,12 +27,12 @@ function App() {
       setIsLoggedIn(false);
     }
   }, []);
-
+  const { theme } = useTheme();
   return (
-    <>
+    <div className={`bg-default ${theme.dark ? "dark" : ""}`}>
       <Router />
       <Alert />
-    </>
+    </div>
   );
 }
 

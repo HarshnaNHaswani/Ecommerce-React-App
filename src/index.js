@@ -12,29 +12,32 @@ import { UserProvider } from "./context/user-context";
 import { AlertProvider } from "./context/alert-context";
 import { CartProvider } from "./context/cart-context";
 import { WishlistProvider } from "./context/wishlist-context";
+import { ThemeProvider } from "./context/theme-context";
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <WindowDimensionProvider>
-      <AlertProvider>
-        <AuthProvider>
-          <UserProvider>
-            <CategoriesProvider>
-              <CartProvider>
-                <WishlistProvider>
-                  <ProductsListingProvider>
-                    <App />
-                  </ProductsListingProvider>
-                </WishlistProvider>
-              </CartProvider>
-            </CategoriesProvider>
-          </UserProvider>
-        </AuthProvider>
-      </AlertProvider>
-      </WindowDimensionProvider>
+      <ThemeProvider>
+        <WindowDimensionProvider>
+          <AlertProvider>
+            <AuthProvider>
+              <UserProvider>
+                <CategoriesProvider>
+                  <CartProvider>
+                    <WishlistProvider>
+                      <ProductsListingProvider>
+                        <App />
+                      </ProductsListingProvider>
+                    </WishlistProvider>
+                  </CartProvider>
+                </CategoriesProvider>
+              </UserProvider>
+            </AuthProvider>
+          </AlertProvider>
+        </WindowDimensionProvider>
+      </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
