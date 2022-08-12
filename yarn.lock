@@ -7551,7 +7551,7 @@
   "resolved" "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
   "version" "1.0.4"
 
-"mockman-js@^1.0.5":
+"mockman-js@^1.1.5":
   "integrity" "sha512-3dH9DjsfFkSGwQ7sNwTi70xE73odvdP4z/0nszb0fXT2N3ov3pabfTWFtY4rmSME6B64+7t3bewVUfurzeOnzw=="
   "resolved" "https://registry.npmjs.org/mockman-js/-/mockman-js-1.1.5.tgz"
   "version" "1.1.5"
