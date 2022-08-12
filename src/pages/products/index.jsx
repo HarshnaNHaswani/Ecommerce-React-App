@@ -1,20 +1,20 @@
-import React from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import Loading from "../../assets/loading.gif";
+import wishlistIconFilled from "../../assets/wishlist-filled.png";
+import wishlistIcon from "../../assets/wishlist.png";
 import { Card } from "../../components/Card/Card";
 import { SortAndFilter } from "../../components/SortAndFilter";
+import { useAlert } from "../../context/alert-context";
+import { useAuth } from "../../context/auth-context";
+import { useCart } from "../../context/cart-context";
 import { useProductListing } from "../../context/product-listing-context";
+import { useUser } from "../../context/user-context";
 import { useWindowDimension } from "../../context/window-context";
+import { useWishlist } from "../../context/wishlist-context";
 import { doArraysHaveCommonElement } from "../../utils/doArraysHaveCommonElement";
 import { numSort } from "../../utils/numSort";
-import { useUser } from "../../context/user-context";
-import wishlistIcon from "../../assets/wishlist.png";
-import wishlistIconFilled from "../../assets/wishlist-filled.png";
 import "./products.css";
-import { useNavigate } from "react-router-dom";
-import { useCart } from "../../context/cart-context";
-import { useWishlist } from "../../context/wishlist-context";
-import { useAlert } from "../../context/alert-context";
-import Loading from "../../assets/loading.gif";
 export const ProductListing = () => {
   const { user } = useUser();
 
@@ -43,16 +43,53 @@ export const ProductListing = () => {
 
   const { showAlert } = useAlert();
   const navigate = useNavigate();
+  const { isLoggedIn } = useAuth();
+
+  const location = useLocation();
+  const isNotAuth = ({ type, product }) => {
+    const redirectProduct = {
+      type,
+      product,
+    };
+    localStorage.setItem("productRedirect", JSON.stringify(redirectProduct));
+    navigate("/login", { replace: true, state: { from: location } });
+  };
   const isInArray = (array, id) =>
     array.filter((item) => item["_id"] === id).length ? true : false;
   const likeButtonClickHandler = (id, product) => {
-    isInArray(wishlist, id)
-      ? removeFromWishlist(product)
-      : addToWishlist(product);
+    isLoggedIn
+      ? isInArray(wishlist, id)
+        ? removeFromWishlist(product)
+        : addToWishlist(product)
+      : isNotAuth({ type: "wishlist", product });
   };
   const cartClickHandler = (id, product) => {
-    isInArray(cart, id) ? navigate("/cart") : addToCart(product);
+    isLoggedIn
+      ? isInArray(cart, id)
+        ? navigate("/cart")
+        : addToCart(product)
+      : isNotAuth({ type: "cart", product });
   };
+
+  useEffect(() => {
+    const productRedirect =
+      JSON.parse(localStorage.getItem("productRedirect")) ?? {};
+
+    if (Object.keys(productRedirect).length > 0) {
+      const { type, product } = productRedirect;
+      switch (type) {
+        case "cart":
+          cartClickHandler(product._id, product);
+          break;
+        case "wishlist":
+          likeButtonClickHandler(product._id, product);
+          break;
+        default:
+          break;
+      }
+      localStorage.removeItem("productRedirect");
+    }
+  }, []);
 
   const getSortedData = (products) => {
     if (sortByPrice) {
@@ -142,9 +179,9 @@ export const ProductListing = () => {
                 />
               </button>
               <button
-                className={`btn bg-default ${
-                  !product.inStock && "disableElement"
-                }`}
+                className={`btn ${
+                  isInArray(cart, product["_id"]) ? "bg-accent" : "bg-default"
+                } ${!product.inStock && "disableElement"}`}
                 title="Purchase Item"
                 onClick={() => cartClickHandler(product["_id"], product)}
               >
