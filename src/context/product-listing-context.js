@@ -1,9 +1,9 @@
 import { createContext } from "react";
 import { useReducer, useEffect } from "react";
 import { useContext } from "react";
-import { productsListingReducer } from "../reducers/productsListingReducer";
+import { productsListingReducer } from "reducers";
 import axios from "axios";
-import { useCategories } from "./categories-context";
+import { useCategories } from "context";
 
 const initialState = {
   products: [],

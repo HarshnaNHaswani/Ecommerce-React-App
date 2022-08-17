@@ -1,17 +1,9 @@
+import { AuthLayout, MainLayout, RequiresAuth } from "components";
 import MockmanEs from "mockman-js";
-import { useRoutes } from "react-router-dom";
 import {
-  Home,
-  ProductListing,
-  Cart,
-  Wishlist,
-  Login,
-  SignUp,
-  ForgotPassword,
-  NotFound,
-} from "../pages";
-import { MainLayout, AuthLayout } from "../components/layouts";
-import { RequiresAuth } from "../components/RequiresAuth";
+  Cart, ForgotPassword, Home, Login, NotFound, ProductListing, SignUp, Wishlist
+} from "pages";
+import { useRoutes } from "react-router-dom";
 export function Router() {
   let element = useRoutes([
     {

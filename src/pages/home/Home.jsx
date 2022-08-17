@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
-import { useCategories } from "../../context/categories-context";
-import { ImageSlider } from "../../components/ImageSlider/ImageSlider";
+import { useCategories } from "context";
+import { ImageSlider } from "components";
 import "./home.css";
 import { FeaturedCategoriesCard } from "./FeaturedCategoriesCard";
 

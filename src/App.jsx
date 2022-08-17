@@ -1,10 +1,9 @@
 import { useEffect } from "react";
 import "./App.css";
-import { Alert } from "./components/Alert/alert";
-import { useAlert } from "./context/alert-context";
-import { Router } from "./router/Router";
-import { useAuth } from "./context/auth-context";
-import { useTheme } from "./context/theme-context";
+import { Alert } from "components";
+import { useAlert, useAuth, useTheme } from "context";
+import { Router } from "router";
+
 function App() {
   const { showAlert } = useAlert();
   const { setIsLoggedIn } = useAuth();

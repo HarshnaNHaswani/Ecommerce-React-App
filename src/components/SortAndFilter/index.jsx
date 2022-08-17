@@ -1,5 +1,5 @@
 import React from "react";
-import { useProductListing } from "../../context/product-listing-context";
+import { useProductListing } from "context";
 import { CategoryFilter } from "./CategoryFilter";
 import { HasFastDelivery } from "./HasFastDelivery";
 import { InStockFliter } from "./InStockFliter";

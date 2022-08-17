@@ -1,14 +1,11 @@
 import React from "react";
-import { useCart } from "../../context/cart-context";
-import { useWindowDimension } from "../../context/window-context";
-import wishlistIconFilled from "../../assets/wishlist-filled.png";
-import wishlistIcon from "../../assets/wishlist.png";
-import { useAlert } from "../../context/alert-context";
-import Loading from "../../assets/loading.gif";
+import wishlistIconFilled from "assets/wishlist-filled.png";
+import wishlistIcon from "assets/wishlist.png";
+import Loading from "assets/loading.gif";
 import "./cart.css";
 import { OrderDetails } from "./OrderDetails";
-import { Card } from "../../components/Card/Card";
-import { useWishlist } from "../../context/wishlist-context";
+import { Card } from "components";
+import { useAlert, useCart, useWindowDimension, useWishlist } from "context";
 export const Cart = () => {
   const { windowDimension } = useWindowDimension();
   const { windowWidth } = windowDimension;

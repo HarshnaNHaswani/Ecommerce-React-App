@@ -1,10 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAlert } from "../../context/alert-context";
-import { useCategories } from "../../context/categories-context";
-import { useProductListing } from "../../context/product-listing-context";
-import { slugify } from "../../utils/slugify";
+import { useAlert, useCategories, useProductListing } from "context";
+
+import { slugify } from "utils";
 
 export function SearchBar() {
   const [search, setSearch] = useState("");

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useCart } from "../../context/cart-context";
+import { useCart } from "context";
 import "./cart.css";
 export const OrderDetails = () => {
   const { cart } = useCart();

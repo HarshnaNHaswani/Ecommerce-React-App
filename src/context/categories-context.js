@@ -1,8 +1,6 @@
 import axios from "axios";
-import { createContext } from "react";
-import { useContext, useState, useEffect } from "react";
-import { useReducer } from "react";
-import {categoriesReducer} from '../reducers/categoriesReducer'
+import { createContext, useContext, useEffect, useReducer } from "react";
+import { categoriesReducer } from 'reducers';
 
 const CategoriesContext = createContext();
 const initialState = {
@@ -52,3 +50,4 @@ const CategoriesProvider = ({ children }) => {
 const useCategories = () => useContext(CategoriesContext);
 
 export { CategoriesProvider, useCategories };
+

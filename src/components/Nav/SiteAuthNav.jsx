@@ -1,10 +1,6 @@
 import React from "react";
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
-import { checkActive } from "./checkActive";
-import { useAuth } from "../../context/auth-context";
-import { useUser } from "../../context/user-context";
-import { useCart } from "../../context/cart-context";
-import { useWishlist } from "../../context/wishlist-context";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useAuth, useCart, useUser, useWishlist } from "context";
 
 export const SiteAuthNav = () => {
   const { isLoggedIn, setIsLoggedIn } = useAuth();

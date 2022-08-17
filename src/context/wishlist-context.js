@@ -1,7 +1,6 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { addItem, removeItem } from "services";
 import { useCart } from "./cart-context";
-import { addItem } from "../services/addItem";
-import { removeItem } from "../services/removeItem";
 const WishlistContext = createContext();
 const initialState = {
   items: [],
@@ -107,3 +106,4 @@ const WishlistProvider = ({ children }) => {
 const useWishlist = () => useContext(WishlistContext);
 
 export { WishlistProvider, useWishlist };
+
