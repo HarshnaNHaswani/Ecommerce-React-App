@@ -1,11 +1,7 @@
-import React from "react";
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { useAuth } from "../../context/auth-context";
-import { useNavigate } from "react-router-dom";
-import { useUser } from "../../context/user-context";
 import axios from "axios";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useAuth, useUser } from "context";
 
 export const Login = () => {
   const initialData = {

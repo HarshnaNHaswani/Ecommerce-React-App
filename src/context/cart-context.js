@@ -1,7 +1,5 @@
-import { createContext, useContext, useState, useEffect } from "react";
-import { addItem } from "../services/addItem";
-import { removeItem } from "../services/removeItem";
-import { updateCartItem } from "../services/updateCartItem";
+import { createContext, useContext, useEffect, useState } from "react";
+import { addItem, removeItem, updateCartItem } from "services";
 const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
@@ -150,3 +148,4 @@ const CartProvider = ({ children }) => {
 };
 const useCart = () => useContext(CartContext);
 export { CartProvider, useCart };
+

@@ -1,7 +1,6 @@
+import { AuthNav, Footer } from "components";
+import { useWindowDimension } from "context";
 import { Outlet } from "react-router-dom";
-import { Footer } from "../Footer";
-import { AuthNav } from "../Nav/AuthNav";
-import { useWindowDimension } from "../../context/window-context";
 export const AuthLayout = () => {
   const {windowDimension} = useWindowDimension()
   return (

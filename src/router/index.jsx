@@ -1,19 +1,9 @@
+import { AuthLayout, MainLayout, RequiresAuth } from "components";
 import MockmanEs from "mockman-js";
-import { useRoutes } from "react-router-dom";
 import {
-  Home,
-  ProductListing,
-  Cart,
-  Wishlist,
-  Login,
-  SignUp,
-  ForgotPassword,
-  NotFound,
-} from "../pages";
-import { MainLayout, AuthLayout } from "../components/layouts";
-import { RequiresAuth } from "../components/RequiresAuth";
-import { SingleProduct } from "../pages/products/SingleProduct";
-import { ProductCrashFallback } from "../pages/products/ProductCrashFallback";
+  Cart, ForgotPassword, Home, Login, NotFound, ProductCrashFallback, ProductListing, SignUp, SingleProduct, Wishlist
+} from "pages";
+import { useRoutes } from "react-router-dom";
 export function Router() {
   let element = useRoutes([
     {

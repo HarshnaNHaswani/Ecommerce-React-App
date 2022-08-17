@@ -1,8 +1,7 @@
-import React from "react";
+import { Footer, MainNav } from "components";
+import { useWindowDimension } from "context";
 import { Outlet } from "react-router-dom";
-import { useWindowDimension } from "../../context/window-context";
-import { Footer } from "../Footer";
-import { MainNav } from "../Nav/MainNav";
+
 
 export const MainLayout = () => {
   const {windowDimension} = useWindowDimension();

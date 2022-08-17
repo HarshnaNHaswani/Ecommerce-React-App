@@ -24,6 +24,29 @@
   --color-status-info: #669beb77;
   --color-status-success: #30a53099;
 }
+
+.dark {
+  --color-primary: #120909;
+  --color-primary-inverse: #aba0a0;
+  --color-secondary: #634f40;
+  --color-secondary-inverse: #ffffff;
+  --color-accent: #da7528;
+  --color-accent-inverse: #000000;
+  --color-background: #211212;
+  --color-text: #b8a088;
+  --color-background-card: #562b2b;
+  --color-text-card: #d6c3c3;
+  --color-shadow: #9f9f9f33;
+  --color-status-plain: #c6d3c6;
+  --color-slider-track: var(--color-status-plain);
+  --color-slider-thumb: var(--color-accent);
+  --color-slider-text: var(--color-text);
+  --color-radio-checkbox: var(--color-accent);
+  --color-form-background: var(--color-background);
+  --color-form-text: var(--color-text);
+  --color-input-focus: var(--color-accent);
+}
+
 body {
   width: clamp(100vw, 100vw, 100vw);
   padding: 0;
@@ -33,6 +56,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
   overflow-x: hidden;
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
 h1,
@@ -120,12 +145,24 @@ main {
 .form-input.password::placeholder {
   text-transform: uppercase;
 }
+
+.position-right {
+  display: block;
+  margin: 2rem;
+  margin-left: auto;
+  padding: 4px;
+  border-width: 1px;
+}
 @media screen and (min-width: 60em) {
   html {
     font-size: 65.4%;
   }
   body {
     margin: 0.25rem;
+  }
+  .position-right {
+    margin: 4rem;
+    margin-left: auto;
   }
 }
 @media screen and (max-width: 25em) {

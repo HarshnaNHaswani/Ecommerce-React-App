@@ -1,12 +1,10 @@
 import React from "react";
-import { Card } from "../../components/Card/Card";
-import { useCart } from "../../context/cart-context";
-import { useWishlist } from "../../context/wishlist-context";
-import wishlistIconFilled from "../../assets/wishlist-filled.png";
-import wishlistIcon from "../../assets/wishlist.png";
+import Loading from "assets/loading.gif";
+import wishlistIconFilled from "assets/wishlist-filled.png";
+import wishlistIcon from "assets/wishlist.png";
+import { Card } from "components";
+import { useAlert, useCart, useWishlist } from "context";
 import "./wishlist.css";
-import { useAlert } from "../../context/alert-context";
-import Loading from "../../assets/loading.gif";
 
 export const Wishlist = () => {
   const {

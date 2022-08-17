@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { checkActive } from "./checkActive";
+import { checkActive } from "utils";
 
 export function PublicRoutesNav() {
   return (

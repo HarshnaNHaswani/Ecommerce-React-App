@@ -1,10 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 import axios from "axios";
-import { useAuth } from "../../context/auth-context";
-import { useUser } from "../../context/user-context";
-import { useNavigate, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useAuth, useUser } from "context";
 
 export const SignUp = () => {
   const initialState = {

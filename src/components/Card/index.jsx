@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useWindowDimension } from "../../context/window-context";
+import { useWindowDimension } from "context";
 import "./card.css";
 export const Card = ({ product, children }) => {
   const {

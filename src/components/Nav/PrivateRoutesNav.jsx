@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { checkActive } from "./checkActive";
-import wishListFilledIcon from "../../assets/wishlist-filled.png";
-import cartFilledIcon from "../../assets/cart-filled.png";
+import { checkActive } from "utils";
+import wishListFilledIcon from "assets/wishlist-filled.png";
+import cartFilledIcon from "assets/cart-filled.png";
 import { useState } from "react";
 
 export function PrivateRoutesNav() {

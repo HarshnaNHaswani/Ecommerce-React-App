@@ -1,19 +1,11 @@
+import Loading from "assets/loading.gif";
+import wishlistIconFilled from "assets/wishlist-filled.png";
+import wishlistIcon from "assets/wishlist.png";
+import { Card, SortAndFilter } from "components";
+import { useAlert, useAuth, useCart, useProductListing, useUser, useWindowDimension, useWishlist } from "context";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Loading from "../../assets/loading.gif";
-import wishlistIconFilled from "../../assets/wishlist-filled.png";
-import wishlistIcon from "../../assets/wishlist.png";
-import { Card } from "../../components/Card/Card";
-import { SortAndFilter } from "../../components/SortAndFilter";
-import { useAlert } from "../../context/alert-context";
-import { useAuth } from "../../context/auth-context";
-import { useCart } from "../../context/cart-context";
-import { useProductListing } from "../../context/product-listing-context";
-import { useUser } from "../../context/user-context";
-import { useWindowDimension } from "../../context/window-context";
-import { useWishlist } from "../../context/wishlist-context";
-import { doArraysHaveCommonElement } from "../../utils/doArraysHaveCommonElement";
-import { numSort } from "../../utils/numSort";
+import { doArraysHaveCommonElement, numSort } from "utils";
 import "./products.css";
 export const ProductListing = () => {
   const { user } = useUser();
