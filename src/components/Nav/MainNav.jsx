@@ -1,11 +1,7 @@
 import React from "react";
+import { DarkTheme, Logo, PrivateRoutesNav, PublicRoutesNav, SearchBar, SiteAuthNav } from ".";
 import "./nav.css";
-import { Logo } from "./Logo";
-import { SiteAuthNav } from "./SiteAuthNav";
-import { PrivateRoutesNav } from "./PrivateRoutesNav";
-import { SearchBar } from "./SearchBar";
-import { PublicRoutesNav } from "./PublicRoutesNav";
-import { DarkTheme } from "./DarkTheme";
+
 
 export const MainNav = () => {
   return (
@@ -15,7 +11,7 @@ export const MainNav = () => {
         <SearchBar />
         <PrivateRoutesNav />
         <SiteAuthNav />
-        <DarkTheme/>
+        <DarkTheme />
       </header>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import img3 from "../../assets/chocolate-wallpaper-3.jpg";
-import img2 from "../../assets/chocolate-wallpaper-2.jpg";
-import img1 from "../../assets/chocolate-wallpaper-1.jpg";
+import img3 from "assets/chocolate-wallpaper-3.jpg";
+import img2 from "assets/chocolate-wallpaper-2.jpg";
+import img1 from "assets/chocolate-wallpaper-1.jpg";
 import { Link } from "react-router-dom";
 import "./imageSlider.css";
 export const ImageSlider = () => {

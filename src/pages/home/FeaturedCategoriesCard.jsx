@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useCategories } from "../../context/categories-context";
+import { useCategories } from "context";
 
 export function FeaturedCategoriesCard({ category }) {
   const { toggleSubCategoryState } = useCategories();

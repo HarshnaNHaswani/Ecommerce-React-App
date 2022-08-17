@@ -65,6 +65,12 @@ export const productsListingReducer = (state, action) => {
         hasRating: action.payload,
       };
     }
+    case "SET_SEARCH_DATA": {
+      return {
+        ...state,
+        searchData: [...action.payload],
+      };
+    }
     case "SET_MINPRICE": {
       return {
         ...state,
@@ -111,11 +117,16 @@ export const productsListingReducer = (state, action) => {
       return {
         ...state,
         isInStockFilter: false,
+        isFeaturedFilter: false,
+        hasFastDelivery: false,
         hasRating: 0,
         hasCategories: [],
         hasSubCategories: [],
+        searchData: [],
         minPrice: 50,
-        sort: null,
+        sortByPrice: null,
+        lowestPrice: 0,
+        highestPrice: 0,
       };
     }
     default:

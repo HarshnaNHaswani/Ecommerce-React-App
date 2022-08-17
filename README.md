@@ -22,6 +22,9 @@
       - price range
       - rating)
   - Home
+  - Single Product Page
+  - Alert
+  - Search
 
 #### Issues:
 https://github.com/HarshnaNHaswani/Ecommerce-React-App/issues

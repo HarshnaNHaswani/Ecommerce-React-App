@@ -1,5 +1,5 @@
 import React from "react";
-import { useProductListing } from "../../context/product-listing-context";
+import { useProductListing } from "context";
 
 export function PriceRange() {
   const { productsListingState, setMinPrice } = useProductListing();

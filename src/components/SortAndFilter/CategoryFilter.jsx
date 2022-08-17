@@ -1,6 +1,6 @@
 import React from "react";
-import { useCategories } from "../../context/categories-context";
-import { slugify } from "../../utils/slugify";
+import { useCategories } from "context";
+import { slugify } from "utils";
 
 export function CategoryFilter() {
   //     setCategoriesAndSubCategories,
