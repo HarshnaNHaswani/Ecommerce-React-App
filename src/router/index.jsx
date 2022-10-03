@@ -1,5 +1,4 @@
 import { AuthLayout, MainLayout, RequiresAuth } from "components";
-import MockmanEs from "mockman-js";
 import {
   Cart, ForgotPassword, Home, Login, NotFound, ProductCrashFallback, ProductListing, SignUp, SingleProduct, Wishlist
 } from "pages";
@@ -52,10 +51,6 @@ export function Router() {
           ),
         },
       ],
-    },
-    {
-      path: "mock",
-      element: <MockmanEs />,
     },
     {
       path: "*",
