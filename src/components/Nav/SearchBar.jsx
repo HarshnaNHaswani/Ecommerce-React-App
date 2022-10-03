@@ -193,14 +193,11 @@ export function SearchBar() {
       </>
     );
   };
-  const [hover, setHover] = useState(false);
   const [isFocussed, setIsFocussed] = useState(true);
   return (
     <div className="search-wrapper">
       <div
         className="form-item status-plain-outline bg-default search-input-wrapper"
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
       >
         <input
           type="search"
@@ -214,7 +211,6 @@ export function SearchBar() {
           value={search}
           onChange={(event) => setSearch(event.target.value)}
         />
-        {hover && (
           <button
             onClick={clearSearch}
             title="clear search"
@@ -222,8 +218,7 @@ export function SearchBar() {
           >
             &times;
           </button>
-        )}
-        <button
+          <button
           className="btn btn-icon bg-default btn-search"
           onClick={searchHandler}
         >

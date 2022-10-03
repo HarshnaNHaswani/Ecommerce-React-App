@@ -1,12 +1,12 @@
 import { AuthNav, Footer } from "components";
-import { useWindowDimension } from "context";
 import { Outlet } from "react-router-dom";
+import { useWindowDimensions } from "utils";
 export const AuthLayout = () => {
-  const {windowDimension} = useWindowDimension()
+  const {width} = useWindowDimensions()
   return (
-    <div>
+    <div className="layout-container auth-container">
       <AuthNav />
-      <main className={`${windowDimension.windowWidth > 560 ? "center-xy" : 'width-sm center-xy'}`}>
+      <main className={`${width > 560 ? "center-xy" : 'width-sm center-xy'}`}>
         <Outlet />
       </main>
       <Footer />

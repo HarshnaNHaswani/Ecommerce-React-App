@@ -76,7 +76,7 @@ const CartProvider = ({ children }) => {
     try {
       const response = await removeItem({
         source: "cart",
-        productId: product["_id"],
+        productId: product._id,
       });
       if (response.status === 200) {
         updateCart(response.data.cart);
@@ -112,7 +112,7 @@ const CartProvider = ({ children }) => {
 
   useEffect(() => {
     const token =
-      localStorage.getItem("token") ?? sessionStorage.getItem("token") ?? "";
+      sessionStorage.getItem("token") ?? "";
     if (token && token.trim().length > 0) {
       fetch("/api/user/cart", {
         headers: {

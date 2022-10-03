@@ -2,16 +2,23 @@
   pointer-events: none;
   margin-right: -2ch;
 }
+.card-container {
+  padding: 8px;
+  font-size: 0.8em;
+}
+.card-container .btn {
+  padding: 8px 4px;
+}
 .card-with-overlay.disableElement {
   margin-right: 0;
 }
 
 .card-horizontal .card-media img {
-  max-height: 400px;
+  max-height: 200px;
 }
 
 .card-horizontal .card-media {
-  width: 200px;
+  width: 100px;
   aspect-ratio: 1;
   object-fit: scale-down;
 }
@@ -31,9 +38,9 @@
 }
 .card-horizontal {
   /* width: fit-content; */
-  min-height: clamp(350px, 400px, 450px);
-  min-width: 550px;
-  max-width: 550px;
+  min-height: clamp( 200px, 225px, 250px);
+  min-width: 300px;
+  max-width: 400px;
   text-align: center;
 }
 
@@ -50,18 +57,18 @@
   min-width: fit-content;
   padding: 0.5ch;
   position: absolute;
-  background-color: inherit;
+  background-color: var(--color-background-card);
 }
 .card-container .btn-float img {
   margin: 0;
 }
 .card-vertical .btn-float {
   top: 2%;
-  right: 0%;
+  right: 2%;
 }
 
 .card-horizontal .btn-float {
-  top: -2%;
+  top: 0%;
   right: 0%;
 }
 
@@ -101,14 +108,14 @@
 .single-product img {
   max-width: 100%;
   margin: 0;
-} 
+}
 
 .single-product .list-inline {
   flex-flow: row wrap;
 }
 .single-product .grid-container {
   grid-template-columns: 5fr 7fr;
-  width: 80vw
+  width: 80vw;
 }
 @media screen and (max-width: 60em) {
   .single-product .grid-container {

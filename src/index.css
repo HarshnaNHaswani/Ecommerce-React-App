@@ -47,15 +47,17 @@
   --color-input-focus: var(--color-accent);
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
 body {
-  width: clamp(100vw, 100vw, 100vw);
   padding: 0;
   font-size: 20px;
   font-family: "Noto Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
-  overflow-x: hidden;
   background-color: var(--color-background);
   color: var(--color-text);
 }
@@ -95,7 +97,6 @@ code {
 main {
   text-align: center;
 }
-
 .number {
   font-family: "Montserrat", sans-serif;
 }

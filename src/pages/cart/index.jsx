@@ -1,14 +1,14 @@
-import React from "react";
+import { useEffect } from "react";
 import wishlistIconFilled from "assets/wishlist-filled.png";
 import wishlistIcon from "assets/wishlist.png";
 import Loading from "assets/loading.gif";
 import "./cart.css";
 import { OrderDetails } from "./OrderDetails";
 import { Card } from "components";
-import { useAlert, useCart, useWindowDimension, useWishlist } from "context";
+import { useAlert, useCart, useWishlist } from "context";
+import { useWindowDimensions } from "utils";
 export const Cart = () => {
-  const { windowDimension } = useWindowDimension();
-  const { windowWidth } = windowDimension;
+  const { width } = useWindowDimensions();
   const {
     wishlist: wishlistState,
     addToWishlist,
@@ -30,11 +30,19 @@ export const Cart = () => {
     updateQuantity({ type: "decrement", product });
   const { items, error, loading } = cart;
   const { showAlert } = useAlert();
+  useEffect(() => {
+    if(error) {
+      showAlert({ text: "An Error Occurred", status: "error" })
+    }
+    window.scrollTo(0,0)
+  }, [])
   return (
     <>
-      {error && showAlert({ text: "An Error Occurred", status: "error" })}
-      {loading && <img src={Loading} alt="loading..." />}
       <h2 className="heading gutter-y-xl">Your Cart</h2>
+      {loading && <img src={Loading} alt="loading..." />}
+
+      {!loading && !error && 
+      <>
       <button onClick={clearCart} className="btn btn-clear outline-secondary position-right">
         Clear Cart
       </button>
@@ -42,7 +50,7 @@ export const Cart = () => {
         <OrderDetails />
         <section
           className={`cart-items card-shadow ${
-            windowWidth > 960 ? "padding-xy-md" : ""
+            width > 960 ? "padding-xy-md" : ""
           }`}
         >
           {items.map((item) => (
@@ -75,7 +83,7 @@ export const Cart = () => {
               </div>
               <button
                 className="btn bg-secondary"
-                onClick={(item) => removeFromCart(item)}
+                onClick={() => removeFromCart(item)}
               >
                 Remove from Cart
               </button>
@@ -93,12 +101,15 @@ export const Cart = () => {
                   }
                   alt="like"
                   className="img-responsive"
+                  loading="lazy"
                 />
               </button>
             </Card>
           ))}
         </section>
       </div>
+      </>
+      }
     </>
   );
 };

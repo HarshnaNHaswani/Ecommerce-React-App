@@ -10,8 +10,7 @@
   justify-content: center;
   align-items: flex-start;
   gap: 2ch;
-  /* --width-min-grid-fit: 25vw;
-  --width-max-grid-fit: 400px; */
+  margin: none;
 }
 
 /* .wishlist .grid-container {

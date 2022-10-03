@@ -27,6 +27,7 @@ export const ImageSlider = () => {
           src={images[index]}
           alt={index}
           className="img-responsive size-lg no-expansion"
+          loading="lazy"
         />
         <button onClick={previousHandler} className="btn-slider btn-previous">
           &#10094;

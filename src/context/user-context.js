@@ -13,9 +13,9 @@ const UserProvider = ({ children }) => {
     setUser({ firstName, lastName, email, address });
   const resetUser = () => setUser(initialState);
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    sessionStorage.setItem("token", token);
+    const token = localStorage.getItem("token")  ?? '';
     if (token && token.trim().length > 0) {
+      sessionStorage.setItem("token", token) 
       const storedUser = JSON.parse(localStorage.getItem("user"));
       sessionStorage.setItem("user", JSON.stringify(storedUser));
       updateAllUserDetails({

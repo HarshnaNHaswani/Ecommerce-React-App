@@ -1,6 +1,7 @@
 .product-listing {
   display: block;
   margin: 2vh 2vw;
+  width:96%
 }
 
 .product-listing > * {
@@ -12,6 +13,7 @@
   gap: 2ch;
   flex-flow: row wrap;
   justify-content: center;
+  align-items: flex-start;
 }
 .product-listing > .products > * {
   justify-self: center;
@@ -72,16 +74,16 @@
   }
   .product-listing {
     display: grid;
-    grid-template-areas: "filters products products";
+    grid-template-areas: "filters products";
+    grid-template-columns: min-content 1fr;
     justify-content: center;
     gap: 2vw;
   }
   .product-listing > .filter {
-    grid-area: "filters";
+    grid-area: filters;
     position: sticky;
-    height: 70vh;
     top: 5%;
-    transform: translate(0, 5%);
+    margin-top: 1ch;
   }
 
   .product-listing > .filter .form-item .list-item {
@@ -91,10 +93,58 @@
     place-items: initial;
   }
   .product-listing > .products {
-    grid-area: "products";
+    grid-area: products;
+    max-height: 100%;
+    overflow-y: auto;
   }
   .filter-form {
     display: flex;
     flex-flow: column wrap;
+    position: sticky;
+    top: 5%;
   }
+
+  main {
+    width: 96%;
+    margin: 0
+  }
+}
+
+.filter .form-item,
+.filter .form-item p{
+  width: 100%;
+  margin: 8px auto;
+}
+.form-item p{
+  display: flex;
+}
+.filter-form #range-price {
+  width: 60%;
+  height: 5px;
+  padding: 0;
+  background: repeating-linear-gradient(to right, 
+    #ccc, 
+    #ccc 10%, 
+    #000 10%, 
+    #000 11%, 
+    #ccc 11%, 
+    #ccc 5%);
+}
+.filter-form option {
+  color: aliceblue;
+}
+#range-price::after,
+#range-price::before {
+  display: none;
+}
+#range-price::-moz-range-track {
+  height: 10px;
+  padding: 0 10px;
+  background: repeating-linear-gradient(to right, 
+    #ccc, 
+    #ccc 10%, 
+    #000 10%, 
+    #000 11%, 
+    #ccc 11%, 
+    #ccc 5%);
 }

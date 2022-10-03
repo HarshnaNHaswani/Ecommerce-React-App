@@ -18,7 +18,7 @@ export const Login = () => {
   const [loadState, setLoadState] = useState(false);
   const [error, setError] = useState(null);
   const location = useLocation();
-  const { isLoggedIn, setIsLoggedIn } = useAuth();
+  const { setIsLoggedIn } = useAuth();
   const navigate = useNavigate();
   const loginHandler = async (event, { test }) => {
     event.preventDefault();
@@ -47,7 +47,7 @@ export const Login = () => {
               email: response.data.foundUser.email,
             })
           );
-          sessionStorage.setItem("token", response.data.encodedToken);
+          sessionStorage.setItem("token", response.data.encodedToken);          
         } else sessionStorage.setItem("token", response.data.encodedToken);
         setLoginData(initialData);
         location?.state?.from?.pathname
@@ -76,8 +76,8 @@ export const Login = () => {
 
   useEffect(() => {
     if (localStorage.getItem("token")?.length > 0) {
-      setToken(localStorage.getItem("token"));
       setIsLoggedIn(true);
+      sessionStorage.setItem('token', localStorage.getItem('token'))
       navigate("/");
     }
   }, []);
@@ -161,17 +161,17 @@ export const Login = () => {
         <button
           type="submit"
           className="btn bg-accent"
-          onClick={(event) => loginHandler(event, { test: false })}
+          onClick={(event) => {
+            event.preventDefault()
+            loginHandler(event, { test: false })
+          }}
         >
           login
         </button>
         <button
           type="submit"
           className="btn outline-accent"
-          onClick={(event) => {
-            setLoginData((prev) => ({ ...prev, ...testData }));
-            loginHandler(event, { test: true });
-          }}
+          onClick={testLoginHandler}
         >
           login with test credentials
         </button>
@@ -181,4 +181,10 @@ export const Login = () => {
       </form>
     </>
   );
+
+  async function testLoginHandler(event) {
+    event.preventDefault();
+    setLoginData((prev) => ({ ...prev, ...testData }));
+    loginHandler(event, { test: true });
+  }
 };

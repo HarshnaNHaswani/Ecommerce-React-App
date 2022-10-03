@@ -17,7 +17,10 @@ export const Home = () => {
 
   const { resetCategories } = useCategories();
 
-  useEffect(() => resetCategories(), []);
+  useEffect(() =>{
+    resetCategories()
+    window.scrollTo(0,0)
+  }, []);
   return (
     <>
       <h2>Meltin' Moments</h2>

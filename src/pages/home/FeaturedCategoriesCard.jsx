@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useCategories } from "context";
+import { transformImage } from "utils";
 
 export function FeaturedCategoriesCard({ category }) {
   const { toggleSubCategoryState } = useCategories();
@@ -18,7 +19,7 @@ export function FeaturedCategoriesCard({ category }) {
       onClick={() => featuredCategoryHandler(_id)}
     >
       <section className="card-media">
-        <img src={media} alt={categoryName} />
+        <img src={transformImage(media)} alt={categoryName} loading='lazy'/>
       </section>
       <section className="card-content">
         <header className="card-header">
