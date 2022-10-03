@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useWindowDimension } from "context";
 import "./card.css";
+import { transformImage, useWindowDimensions } from "utils";
 export const Card = ({ product, children }) => {
   const {
     _id,
@@ -16,13 +16,12 @@ export const Card = ({ product, children }) => {
     fastDelivery,
     discount,
   } = product;
-  const { windowDimension } = useWindowDimension();
-  const { windowWidth } = windowDimension;
+  const { width } = useWindowDimensions();
   return (
     <div
       title={title}
       className={`card-container
-       ${windowWidth < 960 ? "card-vertical" : "card-horizontal"}
+       ${width < 960 ? "card-vertical" : "card-horizontal"}
        ${!inStock ? "card-with-overlay" : ""}
        ${featured && inStock ? "badge-wrapper" : ""}
       `}
@@ -33,7 +32,7 @@ export const Card = ({ product, children }) => {
       )}
       <Link to={`/product/${_id}`}>
         <section className="card-media">
-          <img src={media} alt={title} loading="lazy" />
+          <img src={transformImage(media)} alt={title} loading="lazy" />
         </section>
       </Link>
       <section className="card-content">
@@ -41,7 +40,7 @@ export const Card = ({ product, children }) => {
           <header className="card-header">
             <h2
               className={`"heading ${
-                windowWidth < 960 ? "heading-sm" : "heading-xs"
+                width < 960 ? "heading-sm" : "heading-xs"
               }"`}
             >
               {title}
@@ -116,7 +115,7 @@ export const Card = ({ product, children }) => {
         </Link>
         <footer
           className={`card-actions ${
-            windowWidth < 960 ? "center-xy" : "center-y"
+            width < 960 ? "center-xy" : "center-y"
           }`}
         >
           {children}

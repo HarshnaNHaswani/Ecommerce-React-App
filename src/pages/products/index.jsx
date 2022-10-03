@@ -2,13 +2,13 @@ import Loading from "assets/loading.gif";
 import wishlistIconFilled from "assets/wishlist-filled.png";
 import wishlistIcon from "assets/wishlist.png";
 import { Card, SortAndFilter } from "components";
-import { useAlert, useAuth, useCart, useProductListing, useUser, useWindowDimension, useWishlist } from "context";
+import { useAlert, useAuth, useCart, useProductListing, useWindowDimension, useWishlist } from "context";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { doArraysHaveCommonElement, numSort } from "utils";
+import { doArraysHaveCommonElement, numSort, useWindowDimensions } from "utils";
+import { isInArray } from "../../utils/isInArray";
 import "./products.css";
 export const ProductListing = () => {
-  const { user } = useUser();
 
   const { cart: cartState, addToCart } = useCart();
   const {
@@ -46,8 +46,6 @@ export const ProductListing = () => {
     localStorage.setItem("productRedirect", JSON.stringify(redirectProduct));
     navigate("/login", { replace: true, state: { from: location } });
   };
-  const isInArray = (array, id) =>
-    array.filter((item) => item["_id"] === id).length ? true : false;
   const likeButtonClickHandler = (id, product) => {
     isLoggedIn
       ? isInArray(wishlist, id)
@@ -81,6 +79,7 @@ export const ProductListing = () => {
       }
       localStorage.removeItem("productRedirect");
     }
+    window.scrollTo(0,0)
   }, []);
 
   const getSortedData = (products) => {
@@ -121,10 +120,10 @@ export const ProductListing = () => {
 
   const [displayFilters, setDisplayFilters] = useState(false);
   const { windowDimension } = useWindowDimension();
-  const { windowWidth } = windowDimension;
+  const {width} = useWindowDimensions();
   const toggleFiltersHandler = () => {
     setDisplayFilters((prev) => !prev);
-    if (windowWidth > 1350) setDisplayFilters(false);
+    if (width > 1350) setDisplayFilters(false);
   };
   return (
     <>
@@ -134,7 +133,7 @@ export const ProductListing = () => {
         showAlert({ status: "error", text: "Client Error! Try Again!" })}
       {productListingError.loading && <img src={Loading} alt="loading..." />}
       <h2 className="heading gutter-y-xl">Our Products</h2>
-      {windowWidth < 1350 && (
+      {width < 1350 && (
         <div className="filter-type-toggle">
           <button className="btn bg-secondary" onClick={toggleFiltersHandler}>
             View Filters
@@ -144,13 +143,13 @@ export const ProductListing = () => {
       )}
 
       <div className={"product-listing"}>
-        {windowWidth > 1350 && (
+        {width > 1350 && (
           <aside className="filter gutter-xy-sm">{<SortAndFilter />}</aside>
         )}
 
         <section
           className={`products card-shadow  ${
-            windowWidth > 960 ? "padding-xy-md" : ""
+            width > 960 ? "padding-xy-md" : ""
           }`}
         >
           {filteredData.map((product) => (

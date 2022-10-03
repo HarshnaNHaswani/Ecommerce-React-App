@@ -1,4 +1,4 @@
-import React from "react";
+import {useEffect} from "react";
 import Loading from "assets/loading.gif";
 import wishlistIconFilled from "assets/wishlist-filled.png";
 import wishlistIcon from "assets/wishlist.png";
@@ -33,39 +33,48 @@ export const Wishlist = () => {
         : removeFromWishlist(item)
       : moveToCart(item);
   };
+  useEffect(() => {
+    if(error) {
+      showAlert({ text: "An Error Occurred", status: "error" })
+    }
+    window.scrollTo(0,0)
+  }, [])
   return (
     <>
-      {error && showAlert({text:"An Error Occurred", status: "error"})}
-      {loading && <img src={Loading} alt="loading..."/>}
       <h2 className="heading gutter-y-xl">Your Wishlist</h2>
-      <button onClick={clearWishlist} className="btn btn-clear outline-secondary position-right">
-        Clear Wishlist
-      </button>
-      <div className="wishlist grid-fit">
-        {items.map((item) => (
-          <Card product={item} childClass="grid-child" key={item["_id"]}>
-            <button className="btn bg-secondary" onClick={() => moveToCartHandler(item)}>
-              Move to Cart
-            </button>
+      {loading && <img src={Loading} alt="loading..."/>}
+      {!error && !loading && <>
+        <button onClick={clearWishlist} className="btn btn-clear outline-secondary position-right">
+          Clear Wishlist
+        </button>
+        <div className="wishlist grid-fit">
+          {items.map((item) => (
+            <Card product={item} childClass="grid-child" key={item["_id"]}>
+              <button className={`btn bg-secondary ${!item.inStock && "disableElement"}`} onClick={() => moveToCartHandler(item)}>
+                Move to Cart
+              </button>
 
-            <button
-              className="btn btn-float img-round wishlist-btn"
-              title="like"
-              onClick={() => likeButtonClickHandler(item)}
-            >
-              <img
-                src={
-                  isInWishlist(item["_id"])
-                    ? wishlistIconFilled
-                    : wishlistIcon
-                }
-                alt="like"
-                className="img-responsive"
-              />
-            </button>
-          </Card>
-        ))}
-      </div>
+              <button
+                className="btn btn-float img-round wishlist-btn"
+                title="like"
+                onClick={() => likeButtonClickHandler(item)}
+              >
+                <img
+                  src={
+                    isInWishlist(item["_id"])
+                      ? wishlistIconFilled
+                      : wishlistIcon
+                  }
+                  alt="like"
+                  className="img-responsive"
+                  loading="lazy"
+                />
+              </button>
+            </Card>
+          ))}
+        </div>
+      </>
+      }
     </>
   );
 };
