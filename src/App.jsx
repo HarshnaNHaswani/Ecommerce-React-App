@@ -16,19 +16,11 @@ function App() {
         text: `Welcome back ${storedUser.firstName ?? ""}!`,
         status: "success",
       });
-      return;
-    }
-    if (lengthOfStoredUser || token?.length > 0) {
-      showAlert({
-        text: "error retrieving user data, Please login",
-        status: "error",
-      });
-      setIsLoggedIn(false);
     }
   }, []);
   const { theme } = useTheme();
   return (
-    <div className={`bg-default ${theme.dark ? "dark" : ""}`}>
+    <div className={`App bg-default ${theme.dark ? "dark" : ""}`}>
       <Router />
       <Alert />
     </div>
