@@ -2,7 +2,7 @@
 
 - Made with React
 
-- uses [Mockbee](https://mockbee.netlify.app/) for backend service
+- uses [Mockbee](https://mockbee.netlify.app/) for backend service, [Cloudinary](https://cloudinary.com/) for file storage
 
 - Features:
 
@@ -25,6 +25,7 @@
   - Single Product Page
   - Alert
   - Search
+  - Fully responsive
 
 #### Issues:
 https://github.com/HarshnaNHaswani/Ecommerce-React-App/issues
