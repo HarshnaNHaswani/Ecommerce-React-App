@@ -53,7 +53,7 @@ export const productsListingReducer = (state, action) => {
         isFeaturedFilter: !state.isFeaturedFilter,
       };
     }
-    case "TOGGLE_HAS_FAS_DELIVERY": {
+    case "TOGGLE_HAS_FAST_DELIVERY": {
       return {
         ...state,
         hasFastDelivery: !state.hasFastDelivery,
