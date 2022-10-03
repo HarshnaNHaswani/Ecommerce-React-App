@@ -67,7 +67,7 @@ const WishlistProvider = ({ children }) => {
 
   useEffect(() => {
     const token =
-      localStorage.getItem("token") ?? sessionStorage.getItem("token") ?? "";
+      sessionStorage.getItem("token") ?? "";
     if (token && token.trim().length > 0) {
       setLoading();
       fetch("/api/user/wishlist", {
