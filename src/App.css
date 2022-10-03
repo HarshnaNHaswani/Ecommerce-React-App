@@ -1,51 +1,68 @@
-
-/* .App {
+.App {
+  height: 100vh;
+  width: 99vw;
+  max-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.App * {
+  padding: 0;
+  max-width: 100vw;
+  line-height: 1.5em;
+  outline: none;
+}
+.form {
+  padding: 2ch;
+}
+.form-item {
+  margin: 1ch
+}
+.layout-container {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  height: 100%;
+  align-items: space-between;
+}
+.layout-container > header,
+.layout-container > footer {
+  min-width: 70vw;
+  margin: unset;
+}
+.layout-container > header {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-bottom: 1ch;
+}
+.layout-container > footer {
+  margin-top: 1ch;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 4px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.layout-container main {
+  flex-grow: 1;
+}
+.auth-container > main input:placeholder-shown {
+  opacity: 0.2;
+}
+.auth-container > main .form-item input:focus::placeholder{
+  opacity: 1;
+ transform: translate(100%, 100%);
+}
+.btn {
+  margin: 8px;
+  padding: 4px;
+}
+.btn-clear {
+  margin-right: auto;
+}
+.auth-container .form {
+  max-width: 96vw;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.auth-container .form-item input {
+  max-width: 100%;
 }
-
-.App-header {
-  background-color: #22201c;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-/* .brand-title {
-  font-size: 3rem;
-  color: #d9d9d9;
-}
-
-.brand-title span {
-  color: #ffde59;
-}
-
-.brand-description {
-  font-size: 1.4rem;
-}
-
-.links {
-  display: flex;
-}
- .links a {
-  color: #d9d9d9;
-  font-size: 1.2rem;
-  margin: 1rem;
-} */ 
